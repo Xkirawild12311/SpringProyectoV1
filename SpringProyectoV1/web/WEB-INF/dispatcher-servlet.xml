@@ -20,6 +20,12 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="loginAdmin.htm">loginAdminController</prop>
+                <prop key="home.htm">homeController</prop>
+                <prop key="loginProfesor.htm">loginProfesorController</prop>
+                <prop key="loginAuxiliar.htm">loginAuxiliarController</prop>
+                <prop key="loginPadre.htm">loginPadreController</prop>
+                <prop key="dashboardPadre.htm">dashboardController</prop>
             </props>
         </property>
     </bean>
@@ -32,6 +38,12 @@
     <!--
     The index controller.
     -->
+    <bean name="dashboardController" class="controller.DashboardController" />
+    <bean name="loginPadreController" class="controller.LoginPadreController" />
+    <bean name="loginAuxiliarController" class="controller.LoginAuxiliarController" />
+    <bean name="loginProfesorController" class="controller.LoginProfesorController"/>
+    <bean name="homeController" class="controller.HomeController" />
+    <bean name="loginAdminController" class="controller.LoginAdminController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
