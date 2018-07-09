@@ -9,6 +9,7 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
+
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
     <!--
@@ -26,6 +27,10 @@
                 <prop key="loginAuxiliar.htm">loginAuxiliarController</prop>
                 <prop key="loginPadre.htm">loginPadreController</prop>
                 <prop key="dashboardPadre.htm">dashboardController</prop>
+                <prop key="dashboardAdmin.htm">dashAdminController</prop>
+                   <!--JSP DE ADMIN-->
+                <prop key="adminDocente.htm">adminDocenteController</prop> 
+                <prop key="añadirDocente.htm">añadirDocenteController</prop>
             </props>
         </property>
     </bean>
@@ -38,6 +43,11 @@
     <!--
     The index controller.
     -->
+    <!--JSP DE ADMIN-->
+    <bean name="añadirDocenteController" class="controller.admin.AñadirDocenteController" />
+    <bean name="adminDocenteController" class="controller.admin.AdminDocenteController" />
+    <bean name="dashAdminController" class="controller.admin.DashAdminController" />
+    <!--JSP DE ADMIN-->    
     <bean name="dashboardController" class="controller.DashboardController" />
     <bean name="loginPadreController" class="controller.LoginPadreController" />
     <bean name="loginAuxiliarController" class="controller.LoginAuxiliarController" />

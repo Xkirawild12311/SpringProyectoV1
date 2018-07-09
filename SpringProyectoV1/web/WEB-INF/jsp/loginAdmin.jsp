@@ -19,7 +19,7 @@
                     <div class="account-wall">
                         <img class="profile-img" src="<c:url value="/resources/images/admin2.jpg"/>"
                              alt="">
-                        <form class="form-signin">
+                       <form class="form-signin" method="post">
                             <input type="text" class="form-control" placeholder="Correo" required autofocus>
                             <input type="password" class="form-control" placeholder="Contraseña" required>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
