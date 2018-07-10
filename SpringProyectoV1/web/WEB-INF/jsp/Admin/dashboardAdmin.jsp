@@ -30,10 +30,10 @@
                         <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>                        
                     </li>
                       <li>
-                        <a href="#">Padres</a>
+                        <a href="adminPadre.htm?cargoId=Padre">Padres</a>
                     </li>
                     <li>
-                        <a href="#">Auxiliar</a>
+                        <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
                      <li>
                         <a href="#">Alumnos</a>

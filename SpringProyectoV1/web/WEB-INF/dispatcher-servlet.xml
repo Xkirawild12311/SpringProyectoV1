@@ -28,11 +28,15 @@
                 <prop key="loginPadre.htm">loginPadreController</prop>
                 <prop key="dashboardPadre.htm">dashboardController</prop>
                 <prop key="dashboardAdmin.htm">dashAdminController</prop>
-                   <!--JSP DE ADMIN-->
+                   <!--JSP DE ADMIN DOCENTE-->
                 <prop key="adminDocente.htm">adminDocenteController</prop> 
                 <prop key="añadirDocente.htm">añadirDocenteController</prop>
                 <prop key="eliminarDocente.htm">eliminarDocenteController</prop>
                 <prop key="modificarDocente.htm">modificarDocenteController</prop>
+                    <!--JSP DE ADMIN PADRE-->
+                <prop key="adminPadre.htm">adminPadreController</prop>
+                    <!--JSP DE ADMIN PADRE-->
+                <prop key="adminAuxiliar.htm">adminAuxiliarController</prop>
             </props>
         </property>
     </bean>
@@ -45,7 +49,11 @@
     <!--
     The index controller.
     -->
-    <!--JSP DE ADMIN-->
+    <!--JSP DE ADMIN AUXILIAR-->
+    <bean name="adminAuxiliarController" class="controller.adminAuxiliar.AdminAuxiliarController" />
+    <!--JSP DE ADMIN PADRE-->
+    <bean name="adminPadreController" class="controller.adminPadre.AdminPadreController" />
+    <!--JSP DE ADMIN DOCENTE-->
     <bean name="modificarDocenteController" class="controller.admin.ModificarDocenteController" />
     <bean name="eliminarDocenteController" class="controller.admin.EliminarDocenteController" />
     <bean name="añadirDocenteController" class="controller.admin.AñadirDocenteController" />

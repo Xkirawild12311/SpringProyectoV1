@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <head>
-        <meta charset=UTF-8">
+         <meta charset=UTF-8">
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -14,7 +13,6 @@
     </head>
     <body>
         <div class="wrapper">
-            <!-- Sidebar -->
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <h3>Andes</h3>
@@ -25,11 +23,11 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
-                    <li class="active">
-                        <a href="#">Docentes</a>
-                    </li>
                     <li>
-                         <a href="adminPadre.htm?cargoId=Padre">Padres</a>
+                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">Padres</a>
                     </li>
                     <li>
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
@@ -59,22 +57,9 @@
                     </li>
                 </ul>
             </nav>
-            
-            <div id="content">
-                
-                                     <!--CONTENIDO del Navbar-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                            <i class="fas fa-align-left"></i>
-                            <span>Ocultar</span>
-                        </button>
-                                        
-                    </div>
-                </nav>
-                
-                <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
+      
+        
+          <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                 <h2>listado de Todo el Personal Administrativo</h2>
                 <p>The .table-dark class adds a black background to the table:</p>  
                 <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
@@ -95,7 +80,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${profe}" var="dato">
+                        <c:forEach items="${padre}" var="dato">
                             <tr>
                                 <td><c:out value="${dato.idPersonal}" /></td>
                                 <td><c:out value="${dato.cargoId}" /></td>
@@ -106,10 +91,7 @@
                                 <td><c:out value="${dato.correo}" /></td>
                                 <td><c:out value="${dato.contraseña}" /></td>
                                 <td><c:out value="${dato.fecNacimiento}" /></td>                               
-                                <td><c:out value="${dato.estado}" /></td>
-                                <td>
-                                    <a href="<c:url value="eliminarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-warning">Eliminar</a>                                    
-                                </td>
+                                <td><c:out value="${dato.estado}" /></td>                               
                                 <td>
                                     <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-primary">Modificar</a>
                                 </td>
@@ -118,13 +100,9 @@
                         </c:forEach>
                     </tbody>
                 </table> 
-            </div>     
-                
-            </div> 
-            
-           
+            </div>  
         </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>   
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
@@ -134,17 +112,6 @@
                     $('#sidebar').toggleClass('active');
                 });
             });
-        </script>
-       <script language="JavaScript">
-        function aviso(url){
-        if (!confirm("ALERTA!! va a proceder a eliminar este registro, si desea eliminarlo de click en ACEPTAR\n de lo contrario de click en CANCELAR.")) {
-        return false;
-        }
-        else {
-        document.location = url;
-        return true;
-        }
-        }
         </script>
     </body>
 </html>
