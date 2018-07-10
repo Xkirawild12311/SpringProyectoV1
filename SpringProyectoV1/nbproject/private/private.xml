@@ -3,30 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/controller/admin/AdminDocenteController.java</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/escuela.jpg</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/home.jsp</file>
             <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/Admin/adminDocente.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/loginAdmin.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/what-computerIcons.jpg</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/padre.jpg</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/que.png</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/admin.jpg</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/loginAuxiliar.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/dashboard/dashboardPadre.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/auxiliar.jpg</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/loginPadre.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/admin2.jpg</file>
             <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/Admin/docente/añadirDocente.jsp</file>
             <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/Admin/dashboardAdmin.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/resources/images/profesor.jpg</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/web.xml</file>
             <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/Usuarios.java</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/loginProfesor.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/controller/admin/AñadirDocenteController.java</file>
             <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/Personal.java</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/controller/DashboardController.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/ArticuloValidaciones.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/dashboard/dashboardPadre.jsp</file>
         </group>
     </open-files>
 </project-private>

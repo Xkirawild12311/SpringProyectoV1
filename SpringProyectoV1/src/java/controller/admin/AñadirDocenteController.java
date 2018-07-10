@@ -4,6 +4,7 @@ package controller.admin;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
+import modelos.ArticuloValidaciones;
 import modelos.Conexion;
 import modelos.Personal;
 import org.springframework.dao.DataAccessException;
@@ -21,10 +22,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("añadirDocente.htm")
 public class AñadirDocenteController {
     
-  
+    ArticuloValidaciones articuloValidaciones;
     private JdbcTemplate jdbcTemplate;
 
     public AñadirDocenteController() {
+        this.articuloValidaciones=new ArticuloValidaciones();
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
@@ -46,7 +48,7 @@ public class AñadirDocenteController {
                 SessionStatus status
         )
     {
-        //this.articuloValidaciones.validate(u, result);
+         this.articuloValidaciones.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav=new ModelAndView();

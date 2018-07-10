@@ -4,14 +4,14 @@ import java.sql.Date;
 
 
 public class Personal {
-    private String idPersonal, cargoId, nombre, apellido, sexo, correo, contraseña, comentarios;
+    private String idPersonal, cargoId, nombre, apellido, sexo, correo, contraseña, comentarios, estado;
     private String fecNacimiento;
     private int dni;
 
     public Personal() {
     }
 
-    public Personal(String cargoId, String nombre, String apellido, String sexo, String correo, String contraseña, String comentarios, String fecNacimiento, int dni) {
+    public Personal(String cargoId, String nombre, String apellido, String sexo, String correo, String contraseña, String comentarios, String estado, String fecNacimiento, int dni) {
         this.cargoId = cargoId;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -19,11 +19,12 @@ public class Personal {
         this.correo = correo;
         this.contraseña = contraseña;
         this.comentarios = comentarios;
+        this.estado = estado;
         this.fecNacimiento = fecNacimiento;
         this.dni = dni;
     }
 
-    public Personal(String idPersonal, String cargoId, String nombre, String apellido, String sexo, String correo, String contraseña, String comentarios, String fecNacimiento, int dni) {
+    public Personal(String idPersonal, String cargoId, String nombre, String apellido, String sexo, String correo, String contraseña, String comentarios, String estado, String fecNacimiento, int dni) {
         this.idPersonal = idPersonal;
         this.cargoId = cargoId;
         this.nombre = nombre;
@@ -32,13 +33,27 @@ public class Personal {
         this.correo = correo;
         this.contraseña = contraseña;
         this.comentarios = comentarios;
+        this.estado = estado;
         this.fecNacimiento = fecNacimiento;
         this.dni = dni;
     }
 
+ 
    
     public Personal(String cargoId) {
         this.cargoId = cargoId;
+    }   
+
+    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String fecNacimiento, String estado) {
+        this.idPersonal = idPersonal;
+        this.cargoId = cargoId;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.sexo = sexo;
+        this.correo = correo;
+        this.fecNacimiento = fecNacimiento;
+        this.estado = estado;
     }
 
     public String getIdPersonal() {
@@ -105,6 +120,14 @@ public class Personal {
         this.comentarios = comentarios;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }  
+    
     public String getFecNacimiento() {
         return fecNacimiento;
     }
@@ -112,7 +135,6 @@ public class Personal {
     public void setFecNacimiento(String fecNacimiento) {
         this.fecNacimiento = fecNacimiento;
     }
-
   
 
     public int getDni() {
@@ -121,7 +143,7 @@ public class Personal {
 
     public void setDni(int dni) {
         this.dni = dni;
-    }
+    }   
 
     
   

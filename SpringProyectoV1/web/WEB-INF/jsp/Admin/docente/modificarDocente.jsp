@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset=UTF-8">
+         <meta charset=UTF-8">
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -13,9 +13,9 @@
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container">
+     <div class="container">
             
-             <h3>Añadir nuevos Docentes</h3>
+             <h3>Modificar Docentes</h3>
              
          <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
@@ -23,13 +23,7 @@
 
                     <form:form method="post" commandName="personal">
                         <h1>Complete el formulario</h1>                      
-
-
-                        <p>
-                            <form:label path="idPersonal">ID</form:label>
-                            <form:input path="idPersonal" cssClass="form-control" />
-
-                        </p>
+                      
                         <p>
                             <form:label path="cargoId">Cargo</form:label>
                             <form:input path="cargoId" cssClass="form-control" value="Profe" readonly="true"/>
@@ -67,10 +61,7 @@
                             <form:label path="correo">Correo</form:label>
                             <form:input path="correo" cssClass="form-control" />
                         </p>
-                         <p>
-                            <form:label path="contraseña">Contraseña</form:label>
-                            <form:input path="contraseña" type="password" cssClass="form-control" />
-                        </p>
+                        
                          <p>
                             <form:label path="fecNacimiento">Fecha de Nacimiento</form:label>
                             <form:input path="fecNacimiento" type="date"  cssClass="form-control" />
@@ -86,10 +77,7 @@
                             </form:select>
                                                                                                    
                         </p> 
-                        <p>
-                            <form:label path="comentarios">Comentario(Opcional)</form:label>
-                            <form:input path="comentarios"  cssClass="form-control" />
-                        </p>
+                        
                         <hr />
                         <form:errors path="*" element="div" cssClass="alert alert-danger" />
                         <hr />

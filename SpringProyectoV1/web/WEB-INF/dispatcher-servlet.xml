@@ -31,6 +31,8 @@
                    <!--JSP DE ADMIN-->
                 <prop key="adminDocente.htm">adminDocenteController</prop> 
                 <prop key="añadirDocente.htm">añadirDocenteController</prop>
+                <prop key="eliminarDocente.htm">eliminarDocenteController</prop>
+                <prop key="modificarDocente.htm">modificarDocenteController</prop>
             </props>
         </property>
     </bean>
@@ -44,6 +46,8 @@
     The index controller.
     -->
     <!--JSP DE ADMIN-->
+    <bean name="modificarDocenteController" class="controller.admin.ModificarDocenteController" />
+    <bean name="eliminarDocenteController" class="controller.admin.EliminarDocenteController" />
     <bean name="añadirDocenteController" class="controller.admin.AñadirDocenteController" />
     <bean name="adminDocenteController" class="controller.admin.AdminDocenteController" />
     <bean name="dashAdminController" class="controller.admin.DashAdminController" />

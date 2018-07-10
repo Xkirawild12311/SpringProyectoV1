@@ -77,7 +77,7 @@
                 <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                 <h2>listado de Todo el Personal Administrativo</h2>
                 <p>The .table-dark class adds a black background to the table:</p>  
-                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>
+                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
                 <table class="table table-dark">
                     <thead>
                         <tr>
@@ -89,8 +89,9 @@
                             <th>Sexo</th>
                             <th>Correo</th>
                             <th>Contraseña</th>
-                            <th>Fec Nacimiento</th>
-                            <th>Comentarios</th>                                
+                            <th>Fecha de Nacimiento</th> 
+                            <th>Estado</th>
+                            <th align="center" colspan="3" >Accion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,10 +105,14 @@
                                 <td><c:out value="${dato.sexo}" /></td>
                                 <td><c:out value="${dato.correo}" /></td>
                                 <td><c:out value="${dato.contraseña}" /></td>
-                                <td><c:out value="${dato.fecNacimiento}" /></td>
-                                <td><c:out value="${dato.comentarios}" /></td>
-
-
+                                <td><c:out value="${dato.fecNacimiento}" /></td>                               
+                                <td><c:out value="${dato.estado}" /></td>
+                                <td>
+                                    <a href="<c:url value="eliminarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-warning">Eliminar</a>                                    
+                                </td>
+                                <td>
+                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-primary">Modificar</a>
+                                </td>
 
                             </tr>
                         </c:forEach>
@@ -129,6 +134,17 @@
                     $('#sidebar').toggleClass('active');
                 });
             });
+        </script>
+       <script language="JavaScript">
+        function aviso(url){
+        if (!confirm("ALERTA!! va a proceder a eliminar este registro, si desea eliminarlo de click en ACEPTAR\n de lo contrario de click en CANCELAR.")) {
+        return false;
+        }
+        else {
+        document.location = url;
+        return true;
+        }
+        }
         </script>
     </body>
 </html>
