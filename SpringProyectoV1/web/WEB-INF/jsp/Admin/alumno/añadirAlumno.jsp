@@ -14,21 +14,14 @@
     </head>
     <body>
         <div class="container">
-            
-             <h3>Añadir nuevos Docentes</h3>
-             
-         <div class="panel panel-primary">
+            <h3>Añadir nuevos Alumnos</h3>
+            <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
 
-                    <form:form method="post" commandName="personal">
+                    <form:form method="post" commandName="alumno">
                         <h1>Complete el formulario</h1>                      
 
-                        <p>
-                            <form:label path="cargoId">Cargo</form:label>
-                            <form:input path="cargoId" cssClass="form-control" value="Profe" readonly="true"/>
-
-                        </p>
 
                         <p>
                             <form:label path="nombre">Nombre</form:label>
@@ -54,47 +47,54 @@
                                 <form:option value="Femenino">Fenemino</form:option>
                                 <form:option value="Otro">Otro</form:option> 
                             </form:select>
-                                                                                                   
+
                         </p>
-                        
                         <p>
-                            <form:label path="correo">Correo</form:label>
-                            <form:input path="correo" cssClass="form-control" />
-                        </p>
-                         <p>
-                            <form:label path="contraseña">Contraseña</form:label>
-                            <form:input path="contraseña" type="password" cssClass="form-control" />
-                        </p>
-                         <p>
                             <form:label path="fecNacimiento">Fecha de Nacimiento</form:label>
                             <form:input path="fecNacimiento" type="date"  cssClass="form-control" />
                         </p>
-                       
                         <p>
                             <form:label path="estado">Estado</form:label>
                             <form:select path="estado" cssClass="form-control">
-                                <form:option value="">Selecione un Estado</form:option>
-                                <form:option value="Activo">Activo</form:option>
-                                <form:option value="Inactivo">Inactivo</form:option>
-                                <form:option value="Ausente">Ausente</form:option> 
+                                <form:option value="">Estado</form:option>
+                                <form:option value="activo">Activo</form:option>
+                                <form:option value="inactivo">Inactivo</form:option>
                             </form:select>
-                                                                                                   
+                        </p>  
+                        <p>
+                            <form:label path="Padre_idPadre1">Id Padre</form:label>
+                            <form:select path="Padre_idPadre1" cssClass="form-control">
+                                <form:option value="">Id Padre</form:option>
+                                <c:forEach items="${nivel2}" var="dato">
+                                    <form:option value="${dato.idPadre}">${dato.idPadre}</form:option>
+
+                                </c:forEach>
+                            </form:select>
                         </p> 
                         <p>
-                            <form:label path="comentarios">Comentario(Opcional)</form:label>
-                            <form:input path="comentarios"  cssClass="form-control" />
+                            <form:label path="nivel_idNivel">Nivel</form:label>
+                            <form:select path="nivel_idNivel" cssClass="form-control">                                
+                                <form:option value="">Nivel</form:option>
+                                <c:forEach items="${nivel}" var="dato">
+                                    <form:option value="${dato.idNivel}">${dato.idNivel}</form:option>
+
+                                </c:forEach>
+                            </form:select>
+
                         </p>
+
+
                         <hr />
                         <form:errors path="*" element="div" cssClass="alert alert-danger" />
                         <hr />
                         <input type="submit" value="Enviar" class="btn btn-danger" />
-                        <a href="adminDocente.htm?cargoId=Profe" class="btn btn-warning">Cancelar</a>
+                        <a href="adminPadre.htm?cargoId=Padre" class="btn btn-warning">Cancelar</a>
                     </form:form>
-                        <br>
-                        <br>
+                    <br>
+                    <br>
                 </div>
-            </div>         
-            
+            </div> 
         </div>
+
     </body>
 </html>

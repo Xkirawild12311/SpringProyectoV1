@@ -3,6 +3,7 @@ package controller.admin;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import modelos.ArticuloValidaciones;
 import modelos.Conexion;
@@ -57,9 +58,18 @@ public class AñadirDocenteController {
             return mav;
         }else
         {
+        
+        String queryy = "SELECT idPersonal FROM personal order by idPersonal desc";
+        List datoT=this.jdbcTemplate.queryForList(queryy);
+
+        String dato1=datoT.toString().substring(13, 15);
+        int dato2=Integer.parseInt(datoT.toString().substring(15, 18))+1;
+        String dato3=String.format("%03d", dato2);
+        String idp=dato1+dato3;
+        
         this.jdbcTemplate.update(                
         "insert into personal (idPersonal, cargoId, nombre, apellido, dni, sexo, correo, contraseña, fecNacimiento, comentarios) values (?,?,?,?,?,?,?,?,?,?)",
-         u.getIdPersonal(), u.getCargoId(), u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(), u.getFecNacimiento(), u.getComentarios());
+         idp, u.getCargoId(), u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(), u.getFecNacimiento(), u.getComentarios());
          return new ModelAndView("redirect:/adminDocente.htm?cargoId=Profe");
         }
        

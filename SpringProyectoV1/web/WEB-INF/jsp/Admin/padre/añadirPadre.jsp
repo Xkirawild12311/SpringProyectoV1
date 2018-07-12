@@ -14,21 +14,15 @@
     </head>
     <body>
         <div class="container">
-            
-             <h3>Añadir nuevos Docentes</h3>
+                <h3>Añadir nuevos Padres</h3>
              
          <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
 
-                    <form:form method="post" commandName="personal">
+                    <form:form method="post" commandName="padre">
                         <h1>Complete el formulario</h1>                      
-
-                        <p>
-                            <form:label path="cargoId">Cargo</form:label>
-                            <form:input path="cargoId" cssClass="form-control" value="Profe" readonly="true"/>
-
-                        </p>
+                                         
 
                         <p>
                             <form:label path="nombre">Nombre</form:label>
@@ -69,32 +63,17 @@
                             <form:label path="fecNacimiento">Fecha de Nacimiento</form:label>
                             <form:input path="fecNacimiento" type="date"  cssClass="form-control" />
                         </p>
-                       
-                        <p>
-                            <form:label path="estado">Estado</form:label>
-                            <form:select path="estado" cssClass="form-control">
-                                <form:option value="">Selecione un Estado</form:option>
-                                <form:option value="Activo">Activo</form:option>
-                                <form:option value="Inactivo">Inactivo</form:option>
-                                <form:option value="Ausente">Ausente</form:option> 
-                            </form:select>
-                                                                                                   
-                        </p> 
-                        <p>
-                            <form:label path="comentarios">Comentario(Opcional)</form:label>
-                            <form:input path="comentarios"  cssClass="form-control" />
-                        </p>
+               
                         <hr />
                         <form:errors path="*" element="div" cssClass="alert alert-danger" />
                         <hr />
                         <input type="submit" value="Enviar" class="btn btn-danger" />
-                        <a href="adminDocente.htm?cargoId=Profe" class="btn btn-warning">Cancelar</a>
+                        <a href="adminPadre.htm?cargoId=Padre" class="btn btn-warning">Cancelar</a>
                     </form:form>
                         <br>
                         <br>
                 </div>
-            </div>         
-            
+            </div>   
         </div>
     </body>
 </html>

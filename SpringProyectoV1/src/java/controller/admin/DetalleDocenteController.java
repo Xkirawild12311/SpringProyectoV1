@@ -1,5 +1,5 @@
 
-package controller.adminPadre;
+package controller.admin;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class AdminPadreController {
+public class DetalleDocenteController {
     
-      private JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
-    public AdminPadreController() {
+    public DetalleDocenteController() {
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
     
-      @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();        
-        String idPadre = request.getParameter("idPadre");
-        String sql = "SELECT * FROM padre";      
-        List padre=this.jdbcTemplate.queryForList(sql);
-        mav.addObject("padre", padre);        
-        mav.setViewName("Admin/padre/adminPadre");
+        String personal_id = request.getParameter("personal_id");
+        String sql = "SELECT * FROM nivel_curso WHERE personal_id='" +personal_id+"'";    
+        List personalId=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("personalId", personalId);         
+        mav.setViewName("Admin/detalleDocente");
         System.out.println("Revisar: "+mav.toString());
         return mav;
     }

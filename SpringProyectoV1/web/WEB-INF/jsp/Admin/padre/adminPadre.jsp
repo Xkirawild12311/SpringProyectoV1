@@ -33,7 +33,7 @@
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
                      <li>
-                        <a href="#">Alumnos</a>
+                        <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
@@ -60,40 +60,41 @@
       
         
           <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
-                <h2>listado de Todo el Personal Administrativo</h2>
-                <p>The .table-dark class adds a black background to the table:</p>  
-                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
+              <br>
+                <h2 align="center">Lista de Todos los Padres de Familia</h2>
+                <br>
+                <br>
+                <a href="añadirPadre.htm" class="btn btn-success">Añadir</a>                
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Cargo</th>
+                            <th>ID</th>                            
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Dni</th>
                             <th>Sexo</th>
                             <th>Correo</th>
                             <th>Contraseña</th>
-                            <th>Fecha de Nacimiento</th> 
-                            <th>Estado</th>
+                            <th>Fecha de Nacimiento</th>                         
                             <th align="center" colspan="3" >Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach items="${padre}" var="dato">
                             <tr>
-                                <td><c:out value="${dato.idPersonal}" /></td>
-                                <td><c:out value="${dato.cargoId}" /></td>
+                                <td><c:out value="${dato.idPadre}" /></td>                                
                                 <td><c:out value="${dato.nombre}" /></td>
                                 <td><c:out value="${dato.apellido}" /></td>  
                                 <td><c:out value="${dato.dni}" /></td>
                                 <td><c:out value="${dato.sexo}" /></td>
                                 <td><c:out value="${dato.correo}" /></td>
                                 <td><c:out value="${dato.contraseña}" /></td>
-                                <td><c:out value="${dato.fecNacimiento}" /></td>                               
-                                <td><c:out value="${dato.estado}" /></td>                               
+                                <td><c:out value="${dato.fecNacimiento}" /></td>                                                                                        
                                 <td>
-                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-primary">Modificar</a>
+                                    <a href="<c:url value="modificarPadre.htm?idPadre=${dato.idPadre}"/>" class="btn btn-primary">Modificar</a>
+                                </td>
+                                <td>
+                                    <a href="<c:url value="detallePadre.htm?Padre_idPadre1=${dato.idPadre}"/>" class="btn btn-info">Descripción</a>
                                 </td>
 
                             </tr>

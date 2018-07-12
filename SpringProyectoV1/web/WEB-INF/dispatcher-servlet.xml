@@ -33,10 +33,23 @@
                 <prop key="añadirDocente.htm">añadirDocenteController</prop>
                 <prop key="eliminarDocente.htm">eliminarDocenteController</prop>
                 <prop key="modificarDocente.htm">modificarDocenteController</prop>
+                <prop key="detalleDocente.htm">detalleDocenteController</prop>
                     <!--JSP DE ADMIN PADRE-->
                 <prop key="adminPadre.htm">adminPadreController</prop>
-                    <!--JSP DE ADMIN PADRE-->
+                <prop key="adminPadreGral.htm">adminPadreGralController</prop>
+                <prop key="detallePadre.htm">adminDetallePadreController</prop>
+                <prop key="añadirPadre.htm">adminAñadirPadreController</prop>
+                <prop key="modificarPadre.htm">adminModificarPadreController</prop>
+                    <!--JSP DE ADMIN AUXILIAR-->
                 <prop key="adminAuxiliar.htm">adminAuxiliarController</prop>
+                    <!--JSP DE ADMIN ALUMNO-->
+                <prop key="adminAlumno.htm">adminAlumnoController</prop> 
+                <prop key="añadirAlumno.htm">adminAñadirAlumnoController</prop> 
+                    <!--JSP DE ADMIN AÑO1-->
+                <prop key="año1.htm">adminAño1Controller</prop> 
+                <prop key="matricula1.htm">adminMatricula1Controller</prop> 
+                    <!--JSP DE ADMIN NIVEL-->
+                <prop key="adminNivel.htm">adminNivelController</prop> 
             </props>
         </property>
     </bean>
@@ -49,11 +62,24 @@
     <!--
     The index controller.
     -->
+    <!--JSP DE ADMIN NIVEL-->
+    <bean name="adminNivelController" class="controller.adminNivel.AdminNivelController" />
+    <!--JSP DE ADMIN AÑO1-->
+    <bean name="adminMatricula1Controller" class="controller.adminAlumno.año1.AdminMatricula1Controller" />
+    <bean name="adminAño1Controller" class="controller.adminAlumno.año1.AdminAño1Controller" />
+    <!--JSP DE ADMIN ALUMNO-->   
+    <bean name="adminAñadirAlumnoController" class="controller.adminAlumno.AdminAñadirAlumnoController" /> 
+    <bean name="adminAlumnoController" class="controller.adminAlumno.AdminAlumnoController" />
     <!--JSP DE ADMIN AUXILIAR-->
     <bean name="adminAuxiliarController" class="controller.adminAuxiliar.AdminAuxiliarController" />
     <!--JSP DE ADMIN PADRE-->
+    <bean name="adminModificarPadreController" class="controller.adminPadre.AdminModificarPadreController" />
+    <bean name="adminAñadirPadreController" class="controller.adminPadre.AdminAñadirPadreController" />
+    <bean name="adminDetallePadreController" class="controller.adminPadre.AdminDetallePadreController" />
     <bean name="adminPadreController" class="controller.adminPadre.AdminPadreController" />
+    <bean name="adminPadreGralController" class="controller.adminPadre.AdminPadreGralController" />
     <!--JSP DE ADMIN DOCENTE-->
+    <bean name="detalleDocenteController" class="controller.admin.DetalleDocenteController" />
     <bean name="modificarDocenteController" class="controller.admin.ModificarDocenteController" />
     <bean name="eliminarDocenteController" class="controller.admin.EliminarDocenteController" />
     <bean name="añadirDocenteController" class="controller.admin.AñadirDocenteController" />

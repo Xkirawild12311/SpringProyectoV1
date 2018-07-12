@@ -44,7 +44,7 @@ public class Personal {
         this.cargoId = cargoId;
     }   
 
-    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String fecNacimiento, String estado) {
+    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String contraseña, String fecNacimiento, String estado) {
         this.idPersonal = idPersonal;
         this.cargoId = cargoId;
         this.nombre = nombre;
@@ -52,6 +52,7 @@ public class Personal {
         this.dni = dni;
         this.sexo = sexo;
         this.correo = correo;
+        this.contraseña = contraseña;
         this.fecNacimiento = fecNacimiento;
         this.estado = estado;
     }

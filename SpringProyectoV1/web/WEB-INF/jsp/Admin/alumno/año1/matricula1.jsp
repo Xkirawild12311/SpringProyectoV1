@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <head>
         <meta charset=UTF-8">
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -14,8 +13,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <!-- Sidebar -->
-            <nav id="sidebar">
+             <nav id="sidebar">
                 <div class="sidebar-header">
                     <h3>Andes</h3>
                 </div>
@@ -25,16 +23,16 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
-                    <li class="active">
-                        <a href="#">Docentes</a>
+                    <li>
+                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
                     </li>
                     <li>
-                         <a href="adminPadre.htm?cargoId=Padre">Padres</a>
+                        <a href="adminPadre.htm?cargoId=Padre">Padres</a>
                     </li>
                     <li>
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
-                     <li>
+                     <li  class="active">
                         <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
                     </li>
                     <li>
@@ -59,77 +57,40 @@
                     </li>
                 </ul>
             </nav>
-            
-            <div id="content">
-                
-                                     <!--CONTENIDO del Navbar-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                            <i class="fas fa-align-left"></i>
-                            <span>Ocultar</span>
-                        </button>
-                                        
-                    </div>
-                </nav>
-                
-                <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
-                    <br>
-                <h2 align="center">Lista de todos nuestros Docentes</h2>
-                <br>
-          
+                    
+            <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
+                <h2>listado de Todo el Personal Administrativo</h2>
+                <p>The .table-dark class adds a black background to the table:</p>  
                 <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Cargo</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Dni</th>
-                            <th>Sexo</th>
-                            <th>Correo</th>
-                            <th>Contraseña</th>
-                            <th>Fecha de Nacimiento</th> 
-                            <th>Estado</th>
+                            <th>ID Matricula</th>
+                            <th>Fecha de Matricula</th>                            
+                            <th>Id Padre</th>
+                            <th>Id Alumno</th>
+                            <th>Nivel</th>                                               
                             <th align="center" colspan="3" >Accion</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${profe}" var="dato">
+                        <c:forEach items="${alumnoId}" var="dato">
                             <tr>
-                                <td><c:out value="${dato.idPersonal}" /></td>
-                                <td><c:out value="${dato.cargoId}" /></td>
-                                <td><c:out value="${dato.nombre}" /></td>
-                                <td><c:out value="${dato.apellido}" /></td>  
-                                <td><c:out value="${dato.dni}" /></td>
-                                <td><c:out value="${dato.sexo}" /></td>
-                                <td><c:out value="${dato.correo}" /></td>
-                                <td><c:out value="${dato.contraseña}" /></td>
-                                <td><c:out value="${dato.fecNacimiento}" /></td>                               
-                                <td><c:out value="${dato.estado}" /></td>
+                                <td><c:out value="${dato.idMatricula}" /></td>
+                                <td><c:out value="${dato.fecMatricula}" /></td>
+                                <td><c:out value="${dato.Padre_idPadre}" /></td>
+                                <td><c:out value="${dato.alumno_idAlumno}" /></td>  
+                                <td><c:out value="${dato.nivel_idNivel}" /></td>                      
                                 <td>
-                                    <a href="<c:url value="eliminarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-warning">Eliminar</a>                                    
-                                </td>
-                                <td>
-                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-primary">Modificar</a>
-                                </td>
-                                <td>
-                                    <a href="<c:url value="detalleDocente.htm?personal_id=${dato.idPersonal}"/>" class="btn btn-info">Detalle</a>
-                                </td>
-
+                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idAlumno}"/>" class="btn btn-primary">Modificar</a>
+                                </td>                             
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table> 
-            </div>     
-                
             </div> 
-            
-           
         </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>   
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
@@ -139,17 +100,6 @@
                     $('#sidebar').toggleClass('active');
                 });
             });
-        </script>
-       <script language="JavaScript">
-        function aviso(url){
-        if (!confirm("ALERTA!! va a proceder a eliminar este registro, si desea eliminarlo de click en ACEPTAR\n de lo contrario de click en CANCELAR.")) {
-        return false;
-        }
-        else {
-        document.location = url;
-        return true;
-        }
-        }
-        </script>
+        </script>           
     </body>
 </html>

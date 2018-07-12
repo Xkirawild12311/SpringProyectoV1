@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-          <meta charset=UTF-8">
+       <meta charset=UTF-8">
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -12,8 +12,8 @@
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
-         <div class="wrapper">
-            <nav id="sidebar">
+        <div class="wrapper">
+             <nav id="sidebar">
                 <div class="sidebar-header">
                     <h3>Andes</h3>
                 </div>
@@ -23,14 +23,14 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
                     </li>
                     <li>
-                        <a href="adminPadre.htm?cargoId=Padre">Padres</a>
+                         <a href="adminPadre.htm?cargoId=Padre">Padres</a>
                     </li>
-                    <li  class="active">
-                        <a href="#">Auxiliar</a>
+                    <li>
+                        <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
                      <li>
                         <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
@@ -57,50 +57,30 @@
                     </li>
                 </ul>
             </nav>
-      
-        
-          <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
-                <h2>listado de Todo el Personal Administrativo</h2>
-                <p>The .table-dark class adds a black background to the table:</p>  
-                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
+               <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
+                      <br>
+                <h2 align="center">Cursos y Grados Asignados al Profesor</h2>
+                <br>                                 
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Cargo</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Dni</th>
-                            <th>Sexo</th>
-                            <th>Correo</th>
-                            <th>Contraseña</th>
-                            <th>Fecha de Nacimiento</th> 
-                            <th>Estado</th>
-                            <th align="center" colspan="3" >Accion</th>
+                            <th>ID Docente</th>
+                            <th>Nivel</th>                            
+                            <th>Curso</th>                     
+                         
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${auxiliar}" var="dato">
+                        <c:forEach items="${personalId}" var="dato">
                             <tr>
-                                <td><c:out value="${dato.idPersonal}" /></td>
-                                <td><c:out value="${dato.cargoId}" /></td>
-                                <td><c:out value="${dato.nombre}" /></td>
-                                <td><c:out value="${dato.apellido}" /></td>  
-                                <td><c:out value="${dato.dni}" /></td>
-                                <td><c:out value="${dato.sexo}" /></td>
-                                <td><c:out value="${dato.correo}" /></td>
-                                <td><c:out value="${dato.contraseña}" /></td>
-                                <td><c:out value="${dato.fecNacimiento}" /></td>                               
-                                <td><c:out value="${dato.estado}" /></td>                               
-                                <td>
-                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idPersonal}"/>" class="btn btn-primary">Modificar</a>
-                                </td>
-
+                                <td><c:out value="${dato.personal_id}" /></td>
+                                <td><c:out value="${dato.nivel_id}" /></td>
+                                <td><c:out value="${dato.curso_id}" /></td>                                                                                                        
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table> 
-            </div>  
+            </div> 
         </div>
          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->
@@ -112,6 +92,6 @@
                     $('#sidebar').toggleClass('active');
                 });
             });
-        </script>
+        </script>   
     </body>
 </html>

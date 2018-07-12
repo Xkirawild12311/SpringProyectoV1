@@ -1,5 +1,5 @@
 
-package controller.adminPadre;
+package controller.adminAlumno.año1;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -11,24 +11,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class AdminPadreController {
+public class AdminMatricula1Controller {
     
-      private JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
-    public AdminPadreController() {
+    public AdminMatricula1Controller() {
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
     
-      @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();        
-        String idPadre = request.getParameter("idPadre");
-        String sql = "SELECT * FROM padre";      
-        List padre=this.jdbcTemplate.queryForList(sql);
-        mav.addObject("padre", padre);        
-        mav.setViewName("Admin/padre/adminPadre");
+        String alumno_idAlumno = request.getParameter("alumno_idAlumno");
+        String sql = "SELECT * FROM matricula WHERE alumno_idAlumno='" +alumno_idAlumno+"'";      
+        List alumnoId=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("alumnoId", alumnoId);        
+        mav.setViewName("Admin/alumno/año1/matricula1");
         System.out.println("Revisar: "+mav.toString());
         return mav;
     }
+    
 }

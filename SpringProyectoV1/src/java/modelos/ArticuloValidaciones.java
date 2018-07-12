@@ -22,8 +22,7 @@ public class ArticuloValidaciones implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Personal art = (Personal) o;
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "idPersonal",
-                "required.id", "El campo ID es Obligatorio.");
+       
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cargoId",
                 "required.cargo", "El campo Cargo es Obligatorio.");

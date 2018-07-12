@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class AdminPadreController {
-    
-      private JdbcTemplate jdbcTemplate;
+public class AdminDetallePadreController {   
+      
+    private JdbcTemplate jdbcTemplate;
 
-    public AdminPadreController() {
+    public AdminDetallePadreController() {
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
     
-      @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();        
-        String idPadre = request.getParameter("idPadre");
-        String sql = "SELECT * FROM padre";      
-        List padre=this.jdbcTemplate.queryForList(sql);
-        mav.addObject("padre", padre);        
-        mav.setViewName("Admin/padre/adminPadre");
+        String idPadre = request.getParameter("Padre_idPadre1");
+        String sql = "SELECT * FROM alumno WHERE Padre_idPadre1='" +idPadre+"'";    
+        List hijos=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("hijos", hijos);         
+        mav.setViewName("Admin/padre/detallePadre");
         System.out.println("Revisar: "+mav.toString());
         return mav;
     }
