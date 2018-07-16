@@ -14,14 +14,14 @@
     </head>
     <body>
         <div class="container">
-                <h3>Añadir nuevos Padres</h3>
+            <h1>Añadir nuevos Padres</h1>
              
          <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
 
                     <form:form method="post" commandName="padre">
-                        <h1>Complete el formulario</h1>                      
+                        <h3>Complete el formulario</h3>                     
                                          
 
                         <p>

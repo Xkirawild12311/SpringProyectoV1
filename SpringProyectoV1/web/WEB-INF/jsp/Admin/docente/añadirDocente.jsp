@@ -15,14 +15,14 @@
     <body>
         <div class="container">
             
-             <h3>Añadir nuevos Docentes</h3>
+            <h1>Añadir nuevos Docentes</h1>
              
          <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
 
                     <form:form method="post" commandName="personal">
-                        <h1>Complete el formulario</h1>                      
+                        <h3>Complete el formulario</h3>                   
 
                         <p>
                             <form:label path="cargoId">Cargo</form:label>

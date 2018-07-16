@@ -23,38 +23,45 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
-                    <li>
-                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
+                     <li>                        
+                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>                        
                     </li>
                     <li>
-                        <a href="adminPadre.htm?cargoId=Padre">Padres</a>
-                    </li>
+                        <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
+                            <ul class="collapse list-unstyled" id="paginaPadre">
+                                                     <li>
+                                <a href="adminPadre.htm?">Padres</a>
+                            </li>                          
+                        </ul>
+                    </li>                
                     <li>
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
-                     <li  class="active">
-                        <a href="#">Alumnos</a>
-                    </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
+                    </li>
+                     <li>
+                        <a href="#paginaAlumno" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>  
+                            <ul class="collapse list-unstyled" id="paginaAlumno">
                             <li>
-                                <a href="#">Page 1</a>
+                                <a href="añadirPadre.htm">Matricular Padres</a>
                             </li>
                             <li>
-                                <a href="#">Page 2</a>
+                                <a href="añadirAlumno.htm">Matricular Alumnos</a>
                             </li>
                             <li>
-                                <a href="#">Page 3</a>
+                                <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                           
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Portfolio</a>
+                        <a href="<c:url value="#" />">Agregar Nivel</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="<c:url value="#" />">Cursos</a>
                     </li>
+                              
                 </ul>
             </nav>
       
@@ -79,7 +86,7 @@
                         <img class="card-img-top person" src="<c:url value="/resources/images/admin2.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
-                                <a href="<c:url value="#" />">
+                                <a href="<c:url value="año1.htm?nivel_idNivel=2_grado" />">
                                     <h4 class="card-title" align="center">2 Grado</h4>
                                 </a> 
                             </div>                         
@@ -91,7 +98,7 @@
                         <img class="card-img-top person" src="<c:url value="/resources/images/admin2.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
-                                <a href="<c:url value="#" />">
+                                <a href="<c:url value="año1.htm?nivel_idNivel=3_grado" />">
                                     <h4 class="card-title" align="center">3 Grado</h4>
                                 </a> 
                             </div>                         
@@ -103,7 +110,7 @@
                         <img class="card-img-top person" src="<c:url value="/resources/images/admin2.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
-                                <a href="<c:url value="#" />">
+                               <a href="<c:url value="año1.htm?nivel_idNivel=4_grado" />">
                                     <h4 class="card-title" align="center">4 Grado</h4>
                                 </a> 
                             </div>                         
@@ -115,7 +122,7 @@
                         <img class="card-img-top person" src="<c:url value="/resources/images/admin2.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
-                                <a href="<c:url value="#" />">
+                               <a href="<c:url value="año1.htm?nivel_idNivel=5_grado" />">
                                     <h4 class="card-title" align="center">5 Grado</h4>
                                 </a> 
                             </div>                         
@@ -127,7 +134,7 @@
                         <img class="card-img-top person" src="<c:url value="/resources/images/admin2.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
-                                <a href="<c:url value="#" />">
+                                <a href="<c:url value="año1.htm?nivel_idNivel=6_grado" />">
                                     <h4 class="card-title" align="center">6 Grado</h4>
                                 </a> 
                             </div>                         

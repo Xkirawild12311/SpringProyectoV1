@@ -23,44 +23,51 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
-                    <li>
-                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
+                     <li>                        
+                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>                        
                     </li>
                     <li>
-                        <a href="adminPadre.htm?cargoId=Padre">Padres</a>
-                    </li>
+                        <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
+                            <ul class="collapse list-unstyled" id="paginaPadre">
+                                                     <li>
+                                <a href="adminPadre.htm?">Padres</a>
+                            </li>                          
+                        </ul>
+                    </li>                
                     <li>
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
-                     <li  class="active">
+                    <li>
                         <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
                     </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                     <li>
+                        <a href="#paginaAlumno" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>  
+                            <ul class="collapse list-unstyled" id="paginaAlumno">
                             <li>
-                                <a href="#">Page 1</a>
+                                <a href="añadirPadre.htm">Matricular Padres</a>
                             </li>
                             <li>
-                                <a href="#">Page 2</a>
+                                <a href="añadirAlumno.htm">Matricular Alumnos</a>
                             </li>
                             <li>
-                                <a href="#">Page 3</a>
+                                <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                           
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Portfolio</a>
+                        <a href="<c:url value="#" />">Agregar Nivel</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
-                    </li>
+                        <a href="<c:url value="#" />">Cursos</a>
+                    </li>                            
                 </ul>
             </nav>
                     
             <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
-                <h2>listado de Todo el Personal Administrativo</h2>
-                <p>The .table-dark class adds a black background to the table:</p>  
+                      <br>
+                <h2 align="center">Lista de los Alumnos</h2>
+                <br>
                 <a href="añadirAlumno.htm" class="btn btn-success">Añadir</a>                
                 <table class="table table-dark">
                     <thead>
@@ -86,7 +93,7 @@
                                 <td><c:out value="${dato.fecNacimiento}" /></td>
                                 <td><c:out value="${dato.estado}" /></td>
                                 <td>
-                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idAlumno}"/>" class="btn btn-primary">Modificar</a>
+                                    <a href="<c:url value="modificarAlumno.htm?idAlumno=${dato.idAlumno}"/>" class="btn btn-primary">Modificar</a>
                                 </td>
                                 <td>
                                     <a href="<c:url value="matricula1.htm?alumno_idAlumno=${dato.idAlumno}"/>" class="btn btn-info">Ver Matricula</a>

@@ -2,9 +2,9 @@
 package controller.adminAlumno;
 
 import java.util.List;
-import modelos.Alumno;
+import javax.servlet.http.HttpServletRequest;
 import modelos.Conexion;
-import modelos.Padre;
+import modelos.Matricula;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -14,39 +14,37 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
-@RequestMapping("añadirAlumno.htm")
-public class AdminAñadirAlumnoController {
+@RequestMapping("matricularAlumnos.htm")
+public class AdminMatricularAlumnoController {
     
+       
      //ArticuloValidaciones articuloValidaciones;
     private JdbcTemplate jdbcTemplate;
 
-    public AdminAñadirAlumnoController() {
+    public AdminMatricularAlumnoController() {
         //this.articuloValidaciones=new ArticuloValidaciones();
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
-    
-       @RequestMapping(method=RequestMethod.GET) 
-    public ModelAndView form()
+        @RequestMapping(method=RequestMethod.GET) 
+    public ModelAndView form(HttpServletRequest request)
     {
         ModelAndView mav=new ModelAndView();
-        String sql = "SELECT * FROM nivel";  
-        String sql2 = "SELECT * FROM padre";
-        List nivel=this.jdbcTemplate.queryForList(sql);
-        List nivel2=this.jdbcTemplate.queryForList(sql2);
-        mav.addObject("nivel", nivel); 
-        mav.addObject("nivel2", nivel2);
-        mav.setViewName("Admin/alumno/añadirAlumno");
-        mav.addObject("alumno",new Alumno());
+        String datos = request.getParameter("alumno_idAlumno");
+        String sql = "SELECT * FROM matricula WHERE alumno_idAlumno='" +datos+"'"; 
+        List alumnoId=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("alumnoId", alumnoId); 
+        mav.setViewName("Admin/alumno/matricularAlumnos");
+        mav.addObject("matricula",new Matricula());
         return mav;
     }
+   
      
      @RequestMapping(method=RequestMethod.POST)
     public ModelAndView form
         (
-                @ModelAttribute("alumno") Alumno u,            
+                @ModelAttribute("matricula") Matricula u,            
                 BindingResult result,
                 SessionStatus status
         )
@@ -55,30 +53,31 @@ public class AdminAñadirAlumnoController {
         if(result.hasErrors())
         {
             ModelAndView mav=new ModelAndView();
-            mav.setViewName("Admin/alumno/añadirAlumno");
-            mav.addObject("alumno",new Alumno());
+            mav.setViewName("Admin/alumno/matricularAlumnos");
+            mav.addObject("matricula",new Matricula());
             return mav;
         }else
         {
         
-        String queryy = "SELECT idAlumno FROM alumno order by idAlumno desc";
+        String queryy = "SELECT idMatricula FROM matricula order by idMatricula desc";
         List datoT=this.jdbcTemplate.queryForList(queryy);
         
-        String dato1=datoT.toString().substring(11, 13);
-        int dato2=Integer.parseInt(datoT.toString().substring(13, 16))+1;
+        String dato1=datoT.toString().substring(14, 17);
+        int dato2=Integer.parseInt(datoT.toString().substring(17, 20))+1;
         String dato3=String.format("%03d", dato2);
         String idp=dato1+dato3;
         System.out.println("vvhvhvhvvhvhvh"+dato1);
-        this.jdbcTemplate.update(  
-                
-        "insert into alumno (idAlumno, nombre, apellido, dni, sexo, fecNacimiento, estado, Padre_idPadre1, nivel_idNivel) values (?,?,?,?,?,?,?,?,?)",
-         idp, u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getFecNacimiento(), u.getEstado(), u.getPadre_idPadre1(),u.getNivel_idNivel());
+        System.out.println("vvhvhvhvvhvhvh"+dato2);
+        this.jdbcTemplate.update(
+        "insert into matricula (idMatricula,fecMatricula,Padre_idPadre ,alumno_idAlumno, nivel_idNivel) values (?,?,?,?,?)",
+         idp, u.getFecMatricula(),u.getPadre_idPadre(), u.getAlumno_idAlumno(), u.getNivel_idNivel());
           System.out.println("vvhvhvhvvhvhvh"+dato1);
           System.out.println("vvhvhvhvvhvhvh"+dato1);                  
         return new ModelAndView("redirect:/adminAlumno.htm");
         
-        }
-        
-       
-    } 
+        }  
 }
+
+}
+
+    

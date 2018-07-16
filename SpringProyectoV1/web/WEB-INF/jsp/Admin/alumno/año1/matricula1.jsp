@@ -23,45 +23,52 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
-                    <li>
-                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
+                     <li>                        
+                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>                        
                     </li>
                     <li>
-                        <a href="adminPadre.htm?cargoId=Padre">Padres</a>
-                    </li>
+                        <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
+                            <ul class="collapse list-unstyled" id="paginaPadre">
+                                                     <li>
+                                <a href="adminPadre.htm?">Padres</a>
+                            </li>                          
+                        </ul>
+                    </li>                
                     <li>
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
-                     <li  class="active">
+                    <li>
                         <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
                     </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                     <li>
+                        <a href="#paginaAlumno" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>  
+                            <ul class="collapse list-unstyled" id="paginaAlumno">
                             <li>
-                                <a href="#">Page 1</a>
+                                <a href="añadirPadre.htm">Matricular Padres</a>
                             </li>
                             <li>
-                                <a href="#">Page 2</a>
+                                <a href="añadirAlumno.htm">Matricular Alumnos</a>
                             </li>
                             <li>
-                                <a href="#">Page 3</a>
+                                <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                           
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Portfolio</a>
+                        <a href="<c:url value="#" />">Agregar Nivel</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="<c:url value="#" />">Cursos</a>
                     </li>
+                              
                 </ul>
             </nav>
                     
             <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                 <h2>listado de Todo el Personal Administrativo</h2>
                 <p>The .table-dark class adds a black background to the table:</p>  
-                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
+                <a href="matricularAlumnos.htm?alumno_idAlumno=${dato.idAlumno}" class="btn btn-success">Matricular al Alumno</a>                
                 <table class="table table-dark">
                     <thead>
                         <tr>

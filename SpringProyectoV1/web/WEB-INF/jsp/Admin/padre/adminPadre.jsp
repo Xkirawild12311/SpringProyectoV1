@@ -23,17 +23,43 @@
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
+                     <li>                        
+                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>                        
+                    </li>
                     <li>
-                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">Padres</a>
-                    </li>
+                        <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
+                            <ul class="collapse list-unstyled" id="paginaPadre">
+                            <li>
+                                <a class="active" href="adminPadre.htm?">Padres</a>
+                            </li>                          
+                        </ul>
+                    </li>                
                     <li>
                         <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
                     </li>
-                     <li>
+                    <li>
                         <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
+                    </li>
+                     <li>
+                        <a href="#paginaAlumno" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>  
+                            <ul class="collapse list-unstyled" id="paginaAlumno">
+                            <li>
+                                <a href="añadirPadre.htm">Matricular Padres</a>
+                            </li>
+                            <li>
+                                <a href="añadirAlumno.htm">Matricular Alumnos</a>
+                            </li>
+                            <li>
+                                <a href="añadirDocente.htm">Matricular Docentes</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="<c:url value="#" />">Agregar Nivel</a>
+                    </li>
+                    <li>
+                        <a href="<c:url value="#" />">Cursos</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
@@ -48,13 +74,7 @@
                                 <a href="#">Page 3</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+                    </li>               
                 </ul>
             </nav>
       

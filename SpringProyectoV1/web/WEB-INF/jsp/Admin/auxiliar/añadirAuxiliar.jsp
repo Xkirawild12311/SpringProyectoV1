@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <meta charset=UTF-8">
+        <meta charset=UTF-8">
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -14,15 +14,22 @@
     </head>
     <body>
         <div class="container">
-            <h3>Modificar Padre</h3>
-              <div class="panel panel-primary">
+            
+             <h1>Añadir nuevos Auxiliares</h1>
+             
+         <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
 
-                    <form:form method="post" commandName="padre">
-                        <h1>Complete el formulario</h1>                      
-                      
-              
+                    <form:form method="post" commandName="personal">
+                        <h3>Complete el formulario</h3>                      
+
+                        <p>
+                            <form:label path="cargoId">Cargo</form:label>
+                            <form:input path="cargoId" cssClass="form-control" value="Auxil" readonly="true"/>
+
+                        </p>
+
                         <p>
                             <form:label path="nombre">Nombre</form:label>
                             <form:input path="nombre" cssClass="form-control" />
@@ -54,30 +61,40 @@
                             <form:label path="correo">Correo</form:label>
                             <form:input path="correo" cssClass="form-control" />
                         </p>
-                        
-                        <p>
+                         <p>
                             <form:label path="contraseña">Contraseña</form:label>
-                            <form:password path="contraseña" cssClass="form-control"/>
-                           
+                            <form:input path="contraseña" type="password" cssClass="form-control" />
                         </p>
-                        
                          <p>
                             <form:label path="fecNacimiento">Fecha de Nacimiento</form:label>
                             <form:input path="fecNacimiento" type="date"  cssClass="form-control" />
-                        </p>                      
-                    
-                        
+                        </p>
+                       
+                        <p>
+                            <form:label path="estado">Estado</form:label>
+                            <form:select path="estado" cssClass="form-control">
+                                <form:option value="">Selecione un Estado</form:option>
+                                <form:option value="Activo">Activo</form:option>
+                                <form:option value="Inactivo">Inactivo</form:option>
+                                <form:option value="Ausente">Ausente</form:option> 
+                            </form:select>
+                                                                                                   
+                        </p> 
+                        <p>
+                            <form:label path="comentarios">Comentario(Opcional)</form:label>
+                            <form:input path="comentarios"  cssClass="form-control" />
+                        </p>
                         <hr />
                         <form:errors path="*" element="div" cssClass="alert alert-danger" />
                         <hr />
                         <input type="submit" value="Enviar" class="btn btn-danger" />
-                        <a href="adminPadre.htm" class="btn btn-warning">Cancelar</a>
+                        <a href="adminAuxiliar.htm?cargoId=Auxil" class="btn btn-warning">Cancelar</a>
                     </form:form>
                         <br>
                         <br>
                 </div>
-            </div>  
+            </div>         
+            
         </div>
-             
     </body>
 </html>

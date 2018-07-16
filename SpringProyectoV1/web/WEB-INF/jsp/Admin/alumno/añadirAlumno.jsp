@@ -14,13 +14,13 @@
     </head>
     <body>
         <div class="container">
-            <h3>Añadir nuevos Alumnos</h3>
+            <h1>Añadir nuevos Alumnos</h1>
             <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
 
                     <form:form method="post" commandName="alumno">
-                        <h1>Complete el formulario</h1>                      
+                        <h3>Complete el formulario</h3>                      
 
 
                         <p>
@@ -88,10 +88,10 @@
                         <form:errors path="*" element="div" cssClass="alert alert-danger" />
                         <hr />
                         <input type="submit" value="Enviar" class="btn btn-danger" />
-                        <a href="adminPadre.htm?cargoId=Padre" class="btn btn-warning">Cancelar</a>
+                        <a href="adminAlumno.htm" class="btn btn-warning">Cancelar</a>
                     </form:form>
-                    <br>
-                    <br>
+                    <br>                 
+                   <br>
                 </div>
             </div> 
         </div>
