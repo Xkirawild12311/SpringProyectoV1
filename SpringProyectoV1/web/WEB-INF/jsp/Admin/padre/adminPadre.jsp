@@ -108,7 +108,7 @@
                                 <td><c:out value="${dato.dni}" /></td>
                                 <td><c:out value="${dato.sexo}" /></td>
                                 <td><c:out value="${dato.correo}" /></td>
-                                <td><c:out value="${dato.contraseña}" /></td>
+                                <td><c:out value="${dato.password}" /></td>
                                 <td><c:out value="${dato.fecNacimiento}" /></td>                                                                                        
                                 <td>
                                     <a href="<c:url value="modificarPadre.htm?idPadre=${dato.idPadre}"/>" class="btn btn-primary">Modificar</a>

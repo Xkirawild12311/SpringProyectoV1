@@ -15,7 +15,7 @@
     </head>
     <body> 
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">           
-            <a class="navbar-brand" href="#">ANDINO</a>    
+            <a class="navbar-brand" href="home.htm">ANDINO</a>    
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">INICIO</a>
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                     <div class="card">
-                        <img class="card-img-top person" src="<c:url value="/resources/images/admin2.jpg"/>">   
+                        <img class="card-img-top person img-fluid" src="<c:url value="/resources/images/admin2.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
                                 <a href="<c:url value="/loginAdmin.htm" />">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                     <div class="card">
-                        <img class="card-img-top person" src="<c:url value="/resources/images/profesor.jpg"/>">   
+                        <img class="card-img-top person img-fluid" src="<c:url value="/resources/images/profesor.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
                                 <a href="<c:url value="/loginProfesor.htm" />">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                     <div class="card">
-                        <img class="card-img-top person" src="<c:url value="/resources/images/auxiliar.jpg"/>">   
+                        <img class="card-img-top person img-fluid" src="<c:url value="/resources/images/auxiliar.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
                                 <a href="<c:url value="/loginAuxiliar.htm" />">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
                     <div class="card">
-                        <img class="card-img-top person" src="<c:url value="/resources/images/padre.jpg"/>">   
+                        <img class="card-img-top person img-fluid" src="<c:url value="/resources/images/padre.jpg"/>">   
                         <div class="card-block"> 
                             <div class="card-footer">
                                 <a href="<c:url value="/loginPadre.htm" />">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <img  src="<c:url value="/resources/images/que.png"/>"> 
+                    <img class="img-fluid" src="<c:url value="/resources/images/que.png"/>"> 
                 </div>
             </div>
         </section>

@@ -39,7 +39,7 @@ public class AdminModificarPadreController {
         String idPadre=request.getParameter("idPadre");       
         Padre datos = this.selectPadre(idPadre);
         mav.setViewName("Admin/padre/modificarPadre");
-        mav.addObject("padre", new Padre(idPadre, datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getContraseña(),datos.getFecNacimiento()));
+        mav.addObject("padre", new Padre(idPadre, datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento()));
         return mav;
     }
     
@@ -57,7 +57,7 @@ public class AdminModificarPadreController {
             String idPadre=request.getParameter("idPadre");  
             Padre datos = this.selectPadre(idPadre);
             mav.setViewName("Admin/padre/modificarPadre");
-            mav.addObject("padre", new Padre(idPadre, datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getContraseña(),datos.getFecNacimiento()));
+            mav.addObject("padre", new Padre(idPadre, datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento()));
             return mav;
         } else {
            String idPadre=request.getParameter("idPadre"); 
@@ -68,11 +68,11 @@ public class AdminModificarPadreController {
                     + "dni=?," 
                     + "sexo=?,"    
                     + "correo=?,"
-                    + "contraseña=?,"       
+                    + "password=?,"       
                     + "fecNacimiento=?"               
                     + "where "
                     + "idPadre=? ",
-                    u.getNombre(),u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(),u.getFecNacimiento(), idPadre);
+                    u.getNombre(),u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(),u.getFecNacimiento(), idPadre);
             return new ModelAndView("redirect:/adminPadre.htm?cargoId=Padre");
         }
 
@@ -89,7 +89,7 @@ public class AdminModificarPadreController {
                     user.setDni(rs.getInt("dni"));
                     user.setSexo(rs.getString("sexo"));                   
                     user.setCorreo(rs.getString("correo"));
-                    user.setContraseña(rs.getString("contraseña"));
+                    user.setPassword(rs.getString("password"));
                     user.setFecNacimiento(rs.getString("fecNacimiento"));                   
                     
                 }

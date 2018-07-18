@@ -56,8 +56,8 @@
                         </p>
                         
                         <p>
-                            <form:label path="contraseña">Contraseña</form:label>
-                            <form:password path="contraseña" cssClass="form-control"/>
+                            <form:label path="password">Contraseña</form:label>
+                            <form:password path="password" cssClass="form-control"/>
                            
                         </p>
                         

@@ -3,33 +3,35 @@ package modelos;
 
 
 public class Alumno {
-    private String idAlumno, nombre, apellido, sexo, fecNacimiento, estado, Padre_idPadre1, nivel_idNivel;
+    private String idAlumno, nombre, apellido;
     private int dni;
+    private String sexo, fecNacimiento, estado, Padre_idPadre1, nivel_idNivel;
+    
 
     public Alumno() {
     }
 
-    public Alumno(String nombre, String apellido, String sexo, String fecNacimiento, String estado, String Padre_idPadre1, String nivel_idNivel, int dni) {
+    public Alumno(String nombre, String apellido, int dni, String sexo, String fecNacimiento, String estado, String Padre_idPadre1, String nivel_idNivel) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.dni = dni;
         this.sexo = sexo;
         this.fecNacimiento = fecNacimiento;
         this.estado = estado;
         this.Padre_idPadre1 = Padre_idPadre1;
         this.nivel_idNivel = nivel_idNivel;
-        this.dni = dni;
     }
 
-    public Alumno(String idAlumno, String nombre, String apellido, String sexo, String fecNacimiento, String estado, String Padre_idPadre1, String nivel_idNivel, int dni) {
+    public Alumno(String idAlumno, String nombre, String apellido, int dni, String sexo, String fecNacimiento, String estado, String Padre_idPadre1, String nivel_idNivel) {
         this.idAlumno = idAlumno;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.dni = dni;
         this.sexo = sexo;
         this.fecNacimiento = fecNacimiento;
         this.estado = estado;
         this.Padre_idPadre1 = Padre_idPadre1;
         this.nivel_idNivel = nivel_idNivel;
-        this.dni = dni;
     }
 
     public String getIdAlumno() {
@@ -54,6 +56,14 @@ public class Alumno {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public String getSexo() {
@@ -95,15 +105,9 @@ public class Alumno {
     public void setNivel_idNivel(String nivel_idNivel) {
         this.nivel_idNivel = nivel_idNivel;
     }
-
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
     
+
+   
     
     
 }

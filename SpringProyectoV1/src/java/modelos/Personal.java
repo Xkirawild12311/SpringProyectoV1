@@ -4,47 +4,28 @@ import java.sql.Date;
 
 
 public class Personal {
-    private String idPersonal, cargoId, nombre, apellido, sexo, correo, contraseña, comentarios, estado;
-    private String fecNacimiento;
+    
+    private String idPersonal, cargoId, nombre, apellido;
     private int dni;
-
+    private String sexo, correo, password, fecNacimiento,comentarios, estado;
+    
     public Personal() {
     }
 
-    public Personal(String cargoId, String nombre, String apellido, String sexo, String correo, String contraseña, String comentarios, String estado, String fecNacimiento, int dni) {
+    public Personal(String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String comentarios, String estado) {
         this.cargoId = cargoId;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.dni = dni;
         this.sexo = sexo;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.password = password;
+        this.fecNacimiento = fecNacimiento;
         this.comentarios = comentarios;
         this.estado = estado;
-        this.fecNacimiento = fecNacimiento;
-        this.dni = dni;
     }
 
-    public Personal(String idPersonal, String cargoId, String nombre, String apellido, String sexo, String correo, String contraseña, String comentarios, String estado, String fecNacimiento, int dni) {
-        this.idPersonal = idPersonal;
-        this.cargoId = cargoId;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.sexo = sexo;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.comentarios = comentarios;
-        this.estado = estado;
-        this.fecNacimiento = fecNacimiento;
-        this.dni = dni;
-    }
-
- 
-   
-    public Personal(String cargoId) {
-        this.cargoId = cargoId;
-    }   
-
-    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String contraseña, String fecNacimiento, String estado) {
+    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String comentarios, String estado) {
         this.idPersonal = idPersonal;
         this.cargoId = cargoId;
         this.nombre = nombre;
@@ -52,8 +33,21 @@ public class Personal {
         this.dni = dni;
         this.sexo = sexo;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.password = password;
         this.fecNacimiento = fecNacimiento;
+        this.comentarios = comentarios;
+        this.estado = estado;
+    }
+     public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String estado) {
+        this.idPersonal = idPersonal;
+        this.cargoId = cargoId;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.sexo = sexo;
+        this.correo = correo;
+        this.password = password;
+        this.fecNacimiento = fecNacimiento;       
         this.estado = estado;
     }
 
@@ -89,6 +83,14 @@ public class Personal {
         this.apellido = apellido;
     }
 
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
     public String getSexo() {
         return sexo;
     }
@@ -105,12 +107,20 @@ public class Personal {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFecNacimiento() {
+        return fecNacimiento;
+    }
+
+    public void setFecNacimiento(String fecNacimiento) {
+        this.fecNacimiento = fecNacimiento;
     }
 
     public String getComentarios() {
@@ -121,31 +131,17 @@ public class Personal {
         this.comentarios = comentarios;
     }
 
+    
     public String getEstado() {
         return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }  
+    }
+
     
-    public String getFecNacimiento() {
-        return fecNacimiento;
-    }
-
-    public void setFecNacimiento(String fecNacimiento) {
-        this.fecNacimiento = fecNacimiento;
-    }
-  
-
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }   
-
+    
     
   
     

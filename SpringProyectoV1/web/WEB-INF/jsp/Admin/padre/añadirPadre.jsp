@@ -56,8 +56,8 @@
                             <form:input path="correo" cssClass="form-control" />
                         </p>
                          <p>
-                            <form:label path="contraseña">Contraseña</form:label>
-                            <form:input path="contraseña" type="password" cssClass="form-control" />
+                            <form:label path="password">Contraseña</form:label>
+                            <form:input path="password" type="password" cssClass="form-control" />
                         </p>
                          <p>
                             <form:label path="fecNacimiento">Fecha de Nacimiento</form:label>

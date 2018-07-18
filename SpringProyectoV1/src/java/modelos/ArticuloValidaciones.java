@@ -42,8 +42,8 @@ public class ArticuloValidaciones implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "correo",
                 "required.correo", "El campo Correo electrónico es Obligatorio.");
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "contraseña",
-                "required.contraseña", "El campo Contraseña es Obligatorio.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",
+                "required.password", "El campo Password es Obligatorio.");
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "fecNacimiento",
                 "required.fecNacimiento", "El campo Fecha de Nacimiento es Obligatorio.");

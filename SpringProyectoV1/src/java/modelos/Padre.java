@@ -5,30 +5,30 @@ public class Padre {
     
     private String idPadre, nombre, apellido;
     private int dni;
-    private String sexo, correo, contraseña;
+    private String sexo, correo, password;
     private String fecNacimiento;
 
     public Padre() {
     }
 
-    public Padre(String nombre, String apellido, int dni, String sexo, String correo, String contraseña, String fecNacimiento) {
+    public Padre(String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.sexo = sexo;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.password = password;
         this.fecNacimiento = fecNacimiento;
     }
 
-    public Padre(String idPadre, String nombre, String apellido, int dni, String sexo, String correo, String contraseña, String fecNacimiento) {
+    public Padre(String idPadre, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento) {
         this.idPadre = idPadre;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.sexo = sexo;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.password = password;
         this.fecNacimiento = fecNacimiento;
     }
 
@@ -80,12 +80,12 @@ public class Padre {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFecNacimiento() {

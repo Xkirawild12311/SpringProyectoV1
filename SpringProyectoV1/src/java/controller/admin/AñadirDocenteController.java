@@ -68,8 +68,8 @@ public class AñadirDocenteController {
         String idp=dato1+dato3;
         
         this.jdbcTemplate.update(                
-        "insert into personal (idPersonal, cargoId, nombre, apellido, dni, sexo, correo, contraseña, fecNacimiento, comentarios) values (?,?,?,?,?,?,?,?,?,?)",
-         idp, u.getCargoId(), u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(), u.getFecNacimiento(), u.getComentarios());
+        "insert into personal (idPersonal, cargoId, nombre, apellido, dni, sexo, correo, password, fecNacimiento, comentarios) values (?,?,?,?,?,?,?,?,?,?)",
+         idp, u.getCargoId(), u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(), u.getFecNacimiento(), u.getComentarios());
          return new ModelAndView("redirect:/adminDocente.htm?cargoId=Profe");
         }
        

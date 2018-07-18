@@ -7,7 +7,7 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
@@ -25,42 +25,21 @@
                     <p>Dummy Heading</p>
                 <li class="active">
                         <a href="#">Inicio</a>
-                    </li>
-                    <li>                        
-                        <a href="<c:url value="/adminDocente.htm?cargoId=Profe" />">Docentes</a>                        
-                    </li>
+                    </li>                
+                                                  
                     <li>
+                        <a href="<c:url value="/profAlumno.htm" />">Alumnos</a>
+                    </li>
+             
+                      <li>
                         <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
                             <ul class="collapse list-unstyled" id="paginaPadre">
                                                      <li>
                                 <a href="adminPadre.htm?">Padres</a>
                             </li>                          
                         </ul>
-                    </li>                
-                    <li>
-                        <a href="<c:url value="/adminAuxiliar.htm?cargoId=Auxil" />">Auxiliar</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
-                    </li>
-                     <li>
-                        <a href="#paginaAlumno" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>  
-                            <ul class="collapse list-unstyled" id="paginaAlumno">
-                            <li>
-                                <a href="añadirPadre.htm">Matricular Padres</a>
-                            </li>
-                            <li>
-                                <a href="añadirAlumno.htm">Matricular Alumnos</a>
-                            </li>
-                            <li>
-                                <a href="añadirDocente.htm">Matricular Docentes</a>
-                            </li>
-                           
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
+                    </li> 
+                 
                     <li>
                         <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
@@ -102,41 +81,7 @@
 
                     <h2>listado de Todo el Personal Administrativo</h2>
                     <p>The .table-dark class adds a black background to the table:</p>  
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Cargo</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Dni</th>
-                                <th>Sexo</th>
-                                <th>Correo</th>
-                                <th>Contraseña</th>
-                                <th>Fec Nacimiento</th>
-                                <th>Comentarios</th>                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${datos}" var="dato">
-                                <tr>
-                                    <td><c:out value="${dato.idPersonal}" /></td>
-                                    <td><c:out value="${dato.cargoId}" /></td>
-                                    <td><c:out value="${dato.nombre}" /></td>
-                                    <td><c:out value="${dato.apellido}" /></td>  
-                                    <td><c:out value="${dato.dni}" /></td>
-                                    <td><c:out value="${dato.sexo}" /></td>
-                                    <td><c:out value="${dato.correo}" /></td>
-                                    <td><c:out value="${dato.password}" /></td>
-                                    <td><c:out value="${dato.fecNacimiento}" /></td>
-                                    <td><c:out value="${dato.comentarios}" /></td>
-                                    
-                                                          
-
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table> 
+                
                 </div>
 
 

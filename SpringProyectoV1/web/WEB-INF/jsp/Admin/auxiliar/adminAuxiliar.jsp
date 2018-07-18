@@ -96,7 +96,7 @@
                                 <td><c:out value="${dato.dni}" /></td>
                                 <td><c:out value="${dato.sexo}" /></td>
                                 <td><c:out value="${dato.correo}" /></td>
-                                <td><c:out value="${dato.contraseña}" /></td>
+                                <td><c:out value="${dato.password}" /></td>
                                 <td><c:out value="${dato.fecNacimiento}" /></td>                               
                                 <td><c:out value="${dato.estado}" /></td>                               
                                 <td>

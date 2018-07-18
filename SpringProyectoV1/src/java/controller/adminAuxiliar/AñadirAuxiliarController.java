@@ -69,8 +69,8 @@ public class AñadirAuxiliarController {
         String idp=dato5+dato3;  
             System.out.println("El dato es: "+idp);  
         this.jdbcTemplate.update(                
-        "insert into personal (idPersonal, cargoId, nombre, apellido, dni, sexo, correo, contraseña, fecNacimiento, comentarios) values (?,?,?,?,?,?,?,?,?,?)",
-         idp, u.getCargoId(), u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(), u.getFecNacimiento(), u.getComentarios());
+        "insert into personal (idPersonal, cargoId, nombre, apellido, dni, sexo, correo, password, fecNacimiento, comentarios) values (?,?,?,?,?,?,?,?,?,?)",
+         idp, u.getCargoId(), u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(), u.getFecNacimiento(), u.getComentarios());
          return new ModelAndView("redirect:/adminAuxiliar.htm?cargoId=Auxil");
         
        

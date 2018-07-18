@@ -39,7 +39,7 @@ public class ModificarAuxiliarController {
         String idPersonal=request.getParameter("idPersonal");       
         Personal datos = this.selectPersonal(idPersonal);
         mav.setViewName("Admin/auxiliar/modificarAuxiliar");
-        mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getContraseña(),datos.getFecNacimiento(), datos.getEstado()));
+        mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento(), datos.getEstado()));
         return mav;
     }
     
@@ -56,7 +56,7 @@ public class ModificarAuxiliarController {
             String idPersonal=request.getParameter("idPersonal");  
             Personal datos = this.selectPersonal(idPersonal);
             mav.setViewName("Admin/auxiliar/modificarAuxiliar");
-            mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getContraseña(),datos.getFecNacimiento(), datos.getEstado()));
+            mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento(), datos.getEstado()));
             return mav;
         } else {
            String idPersonal=request.getParameter("idPersonal"); 
@@ -68,12 +68,12 @@ public class ModificarAuxiliarController {
                     + "dni=?," 
                     + "sexo=?,"    
                     + "correo=?,"
-                    + "contraseña=?,"       
+                    + "password=?,"       
                     + "fecNacimiento=?,"            
                     + "estado=? "
                     + "where "
                     + "idPersonal=? ",
-                    u.getCargoId(),u.getNombre(),u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(),u.getFecNacimiento(), u.getEstado(), idPersonal);
+                    u.getCargoId(),u.getNombre(),u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(),u.getFecNacimiento(), u.getEstado(), idPersonal);
             return new ModelAndView("redirect:/adminAuxiliar.htm?cargoId=Auxil");
         }
 
@@ -91,7 +91,7 @@ public class ModificarAuxiliarController {
                     user.setDni(rs.getInt("dni"));
                     user.setSexo(rs.getString("sexo"));                   
                     user.setCorreo(rs.getString("correo"));
-                    user.setContraseña(rs.getString("contraseña"));
+                    user.setPassword(rs.getString("password"));
                     user.setFecNacimiento(rs.getString("fecNacimiento"));
                     user.setEstado(rs.getString("estado"));
                     

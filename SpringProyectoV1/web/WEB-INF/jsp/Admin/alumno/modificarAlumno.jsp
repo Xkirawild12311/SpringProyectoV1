@@ -67,14 +67,36 @@
                                                                                                    
                         </p> 
                                          
-                       
+                       <p>
+                            <form:label path="Padre_idPadre1">Id Padre</form:label>
+                            <form:select path="Padre_idPadre1" cssClass="form-control">
+                                <form:option value="">Id Padre</form:option>
+                                <c:forEach items="${nivel2}" var="dato">
+                                    <form:option value="${dato.idPadre}">${dato.idPadre}</form:option>
+
+                                </c:forEach>
+                            </form:select>
+                        </p> 
+                        <p>
+                            <form:label path="nivel_idNivel">Nivel</form:label>
+                            <form:select path="nivel_idNivel" cssClass="form-control">                                
+                                <form:option value="">Nivel</form:option>
+                                <c:forEach items="${nivel}" var="dato">
+                                    <form:option value="${dato.idNivel}">${dato.idNivel}</form:option>
+
+                                </c:forEach>
+                            </form:select>
+
+                        </p>
                   
                         
                         <hr />
                         <form:errors path="*" element="div" cssClass="alert alert-danger" />
                         <hr />
                         <input type="submit" value="Enviar" class="btn btn-danger" />
-                        <a href="adminAuxiliar.htm?cargoId=Auxil" class="btn btn-warning">Cancelar</a>
+                       
+                        <a href="adminAlumno.htm" class="btn btn-warning">Cancelar</a>
+                     
                     </form:form>
                         <br>
                         <br>

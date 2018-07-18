@@ -65,8 +65,8 @@ public class AdminAñadirPadreController {
         
         this.jdbcTemplate.update(  
                 
-        "insert into padre (idPadre, nombre, apellido, dni, sexo, correo, contraseña, fecNacimiento) values (?,?,?,?,?,?,?,?)",
-         idp, u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getContraseña(), u.getFecNacimiento());
+        "insert into padre (idPadre, nombre, apellido, dni, sexo, correo, password, fecNacimiento) values (?,?,?,?,?,?,?,?)",
+         idp, u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(), u.getFecNacimiento());
           System.out.println("vvhvhvhvvhvhvh"+dato1);
         return new ModelAndView("redirect:/adminPadre.htm?cargoId=Padre");
         }

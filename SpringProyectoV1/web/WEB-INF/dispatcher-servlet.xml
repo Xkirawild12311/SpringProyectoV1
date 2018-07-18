@@ -48,6 +48,7 @@
                 <prop key="adminAlumno.htm">adminAlumnoController</prop> 
                 <prop key="añadirAlumno.htm">adminAñadirAlumnoController</prop> 
                 <prop key="matricularAlumnos.htm">adminMatricularAlumnoController</prop>
+                <prop key="modificarAlumno.htm">adminModificarAlumnoController</prop>
                     <!--JSP DE ADMIN AÑO1-->
                 <prop key="año1.htm">adminAño1Controller</prop> 
                 <prop key="matricula1.htm">adminMatricula1Controller</prop> 
@@ -55,7 +56,10 @@
                 <prop key="adminCurso.htm">adminCursoController</prop> 
                 <prop key="añadirCurso.htm">añadirCursoController</prop>
                 <prop key="modificarCurso.htm">modificarCursoController</prop>
-             
+                    <!--JSP DE PROFESOR-->
+                <prop key="dashboardProfesor.htm">dashboardProfesorController</prop>
+                    <!--JSP DE PROFESOR ALUMNO-->
+                <prop key="profAlumno.htm">profesorAlumnoController</prop>
             </props>
         </property>
     </bean>
@@ -68,6 +72,10 @@
     <!--
     The index controller.
     -->
+    <!--JSP DE PROFESOR ALUMNO-->
+     <bean name="profesorAlumnoController" class="controller.profesor.alumno.ProfesorAlumnoController" />
+    <!--JSP DE PROFESOR-->
+     <bean name="dashboardProfesorController" class="controller.profesor.DashboardProfesorController" />
      <!--JSP DE ADMIN CURSO-->
     <bean name="modificarCursoController" class="controller.adminCurso.ModificarCursoController" />
     <bean name="añadirCursoController" class="controller.adminCurso.AñadirCursoController" />
@@ -76,6 +84,7 @@
     <bean name="adminMatricula1Controller" class="controller.adminAlumno.año1.AdminMatricula1Controller" />
     <bean name="adminAño1Controller" class="controller.adminAlumno.año1.AdminAño1Controller" />
     <!--JSP DE ADMIN ALUMNO--> 
+    <bean name="adminModificarAlumnoController" class="controller.adminAlumno.AdminModificarAlumnoController" />
     <bean name="adminMatricularAlumnoController" class="controller.adminAlumno.AdminMatricularAlumnoController" />
     <bean name="adminAñadirAlumnoController" class="controller.adminAlumno.AdminAñadirAlumnoController" /> 
     <bean name="adminAlumnoController" class="controller.adminAlumno.AdminAlumnoController" />
