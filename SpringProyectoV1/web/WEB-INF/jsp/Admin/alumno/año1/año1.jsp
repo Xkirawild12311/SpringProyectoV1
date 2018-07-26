@@ -7,7 +7,7 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
@@ -15,11 +15,11 @@
         <div class="wrapper">
              <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Andes</h3>
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
+                   <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
@@ -52,23 +52,23 @@
                             <li>
                                 <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                             <li>
+                                <a href="asignarCursoDocente.htm">Asignar Curso a Docentes</a>
+                            </li>
                            
                         </ul>
                     </li>
-                    <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Cursos</a>
-                    </li>                            
+                
+                  <li>
+                        <a href="<c:url value="adminCurso.htm" />">Cursos</a>
+                    </li>                           
                 </ul>
             </nav>
                     
             <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                       <br>
                 <h2 align="center">Lista de los Alumnos</h2>
-                <br>
-                <a href="añadirAlumno.htm" class="btn btn-success">Añadir</a>                
+                <br>                             
                 <table class="table table-dark">
                     <thead>
                         <tr>

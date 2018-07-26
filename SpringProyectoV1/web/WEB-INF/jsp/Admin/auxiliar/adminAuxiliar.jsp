@@ -7,19 +7,19 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
          <div class="wrapper">
             <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Andes</h3>
+                 <div class="sidebar-header">
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
+                    <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
@@ -55,11 +55,9 @@
                            
                         </ul>
                     </li>
+               
                     <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Cursos</a>
+                        <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
                               
                 </ul>
@@ -69,8 +67,9 @@
           <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                 <h1>Lista de Auxiliares de la Institución</h1>
                 <br>
-                <a href="añadirAuxiliar.htm" class="btn btn-success">Añadir</a>                
-                <table class="table table-dark">
+                <a href="añadirAuxiliar.htm" class="btn btn-success">Añadir</a>     
+                <div class="table-responsive">
+                    <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -107,6 +106,8 @@
                         </c:forEach>
                     </tbody>
                 </table> 
+                </div>
+                
             </div>  
         </div>
          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

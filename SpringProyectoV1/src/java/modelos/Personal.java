@@ -7,12 +7,12 @@ public class Personal {
     
     private String idPersonal, cargoId, nombre, apellido;
     private int dni;
-    private String sexo, correo, password, fecNacimiento,comentarios, estado;
+    private String sexo, correo, password, fecNacimiento,comentarios, estado, enabled;
     
     public Personal() {
     }
 
-    public Personal(String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String comentarios, String estado) {
+    public Personal(String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String comentarios, String estado, String enabled) {
         this.cargoId = cargoId;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,9 +23,10 @@ public class Personal {
         this.fecNacimiento = fecNacimiento;
         this.comentarios = comentarios;
         this.estado = estado;
+        this.enabled = enabled;
     }
 
-    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String comentarios, String estado) {
+    public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String comentarios, String estado, String enabled) {
         this.idPersonal = idPersonal;
         this.cargoId = cargoId;
         this.nombre = nombre;
@@ -37,8 +38,9 @@ public class Personal {
         this.fecNacimiento = fecNacimiento;
         this.comentarios = comentarios;
         this.estado = estado;
+        this.enabled = enabled;
     }
-     public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String estado) {
+     public Personal(String idPersonal, String cargoId, String nombre, String apellido, int dni, String sexo, String correo, String password, String fecNacimiento, String estado, String enabled) {
         this.idPersonal = idPersonal;
         this.cargoId = cargoId;
         this.nombre = nombre;
@@ -49,6 +51,7 @@ public class Personal {
         this.password = password;
         this.fecNacimiento = fecNacimiento;       
         this.estado = estado;
+        this.enabled = enabled;
     }
 
     public String getIdPersonal() {
@@ -138,6 +141,14 @@ public class Personal {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(String enabled) {
+        this.enabled = enabled;
     }
 
     

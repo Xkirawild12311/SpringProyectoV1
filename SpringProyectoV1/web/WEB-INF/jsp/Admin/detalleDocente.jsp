@@ -7,7 +7,7 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
@@ -15,11 +15,11 @@
         <div class="wrapper">
              <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Andes</h3>
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
+                    <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
@@ -52,29 +52,16 @@
                             <li>
                                 <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                             <li>
+                                <a href="asignarCursoDocente.htm">Asignar Curso a Docentes</a>
+                            </li>
                            
                         </ul>
-                    </li>
+                    </li>                 
                     <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
+                        <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
-                    <li>
-                        <a href="<c:url value="#" />">Cursos</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>               
+                             
                 </ul>
             </nav>
                <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->

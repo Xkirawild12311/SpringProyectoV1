@@ -1,11 +1,14 @@
 
 package controller.admin;
 
+import java.security.Principal;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelos.Conexion;
 import modelos.Usuarios;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +34,6 @@ public class DashAdminController {
         mav.addObject("datos", datos);
         mav.setViewName("Admin/dashboardAdmin");
         return mav;
-    }
+    } 
  
 }

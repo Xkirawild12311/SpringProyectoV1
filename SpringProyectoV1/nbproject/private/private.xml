@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/loginPadre.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/loginAdmin.jsp</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/controller/LoginPadreController.java</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/controller/LoginAdminController.java</file>
-            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/CursoValidaciones.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/ModfAlumnoValidaciones.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/Admin/dashboardAdmin.jsp</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/Curso2Validaciones.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/controller/adminAlumno/AdminModificarAlumnoController.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/src/java/modelos/AlumnoValidaciones.java</file>
+            <file>file:/D:/JSPNetBeans/SpringProyectoV1/SpringProyectoV1/web/WEB-INF/jsp/Admin/alumno/modificarAlumno.jsp</file>
         </group>
     </open-files>
 </project-private>

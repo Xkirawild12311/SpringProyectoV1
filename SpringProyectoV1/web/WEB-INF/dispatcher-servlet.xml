@@ -29,6 +29,7 @@
                 <prop key="dashboardPadre.htm">dashboardController</prop>
                 <prop key="dashboardAdmin.htm">dashAdminController</prop>
                    <!--JSP DE ADMIN DOCENTE-->
+                <prop key="asignarCursoDocente.htm">asignarCursoDocenteController</prop>
                 <prop key="adminDocente.htm">adminDocenteController</prop> 
                 <prop key="añadirDocente.htm">añadirDocenteController</prop>
                 <prop key="eliminarDocente.htm">eliminarDocenteController</prop>
@@ -49,6 +50,7 @@
                 <prop key="añadirAlumno.htm">adminAñadirAlumnoController</prop> 
                 <prop key="matricularAlumnos.htm">adminMatricularAlumnoController</prop>
                 <prop key="modificarAlumno.htm">adminModificarAlumnoController</prop>
+                <prop key="modificarMatricula.htm">adminModificarMatricula</prop>
                     <!--JSP DE ADMIN AÑO1-->
                 <prop key="año1.htm">adminAño1Controller</prop> 
                 <prop key="matricula1.htm">adminMatricula1Controller</prop> 
@@ -84,6 +86,7 @@
     <bean name="adminMatricula1Controller" class="controller.adminAlumno.año1.AdminMatricula1Controller" />
     <bean name="adminAño1Controller" class="controller.adminAlumno.año1.AdminAño1Controller" />
     <!--JSP DE ADMIN ALUMNO--> 
+    <bean name="adminModificarMatricula" class="controller.adminAlumno.AdminModificarMatricula" />
     <bean name="adminModificarAlumnoController" class="controller.adminAlumno.AdminModificarAlumnoController" />
     <bean name="adminMatricularAlumnoController" class="controller.adminAlumno.AdminMatricularAlumnoController" />
     <bean name="adminAñadirAlumnoController" class="controller.adminAlumno.AdminAñadirAlumnoController" /> 
@@ -99,6 +102,7 @@
     <bean name="adminPadreController" class="controller.adminPadre.AdminPadreController" />
     <bean name="adminPadreGralController" class="controller.adminPadre.AdminPadreGralController" />
     <!--JSP DE ADMIN DOCENTE-->
+    <bean name="asignarCursoDocenteController" class="controller.admin.AsignarCursoDocente" />
     <bean name="detalleDocenteController" class="controller.admin.DetalleDocenteController" />
     <bean name="modificarDocenteController" class="controller.admin.ModificarDocenteController" />
     <bean name="eliminarDocenteController" class="controller.admin.EliminarDocenteController" />

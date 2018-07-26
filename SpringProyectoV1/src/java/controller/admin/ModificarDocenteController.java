@@ -39,7 +39,7 @@ public class ModificarDocenteController {
         String idPersonal=request.getParameter("idPersonal");       
         Personal datos = this.selectPersonal(idPersonal);
         mav.setViewName("Admin/docente/modificarDocente");
-        mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento(), datos.getEstado()));
+        mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento(), datos.getEstado(),datos.getEnabled()));
         return mav;
     }
     
@@ -57,7 +57,7 @@ public class ModificarDocenteController {
             String idPersonal=request.getParameter("idPersonal");  
             Personal datos = this.selectPersonal(idPersonal);
             mav.setViewName("Admin/docente/modificarDocente");
-            mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento(), datos.getEstado()));
+            mav.addObject("personal", new Personal(idPersonal, datos.getCargoId(), datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(), datos.getCorreo(), datos.getPassword(),datos.getFecNacimiento(), datos.getEstado(), datos.getEnabled()));
             return mav;
         } else {
            String idPersonal=request.getParameter("idPersonal"); 
@@ -70,11 +70,12 @@ public class ModificarDocenteController {
                     + "sexo=?,"    
                     + "correo=?,"
                     + "password=?,"       
-                    + "fecNacimiento=?,"            
-                    + "estado=? "
+                    + "fecNacimiento=?,"  
+                    + "estado=?,"          
+                    + "enabled=? "
                     + "where "
                     + "idPersonal=? ",
-                    u.getCargoId(),u.getNombre(),u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(),u.getFecNacimiento(), u.getEstado(), idPersonal);
+                    u.getCargoId(),u.getNombre(),u.getApellido(), u.getDni(), u.getSexo(), u.getCorreo(), u.getPassword(),u.getFecNacimiento(), u.getEstado(),"0", idPersonal);
             return new ModelAndView("redirect:/adminDocente.htm?cargoId=Profe");
         }
 
@@ -95,6 +96,7 @@ public class ModificarDocenteController {
                     user.setPassword(rs.getString("password"));
                     user.setFecNacimiento(rs.getString("fecNacimiento"));
                     user.setEstado(rs.getString("estado"));
+                    user.setEnabled(rs.getString("enabled"));
                     
                 }
                 return user;

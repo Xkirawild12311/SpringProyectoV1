@@ -7,15 +7,15 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+       <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="wrapper">
             <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Andes</h3>
+                 <div class="sidebar-header">
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">

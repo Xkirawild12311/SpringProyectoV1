@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import modelos.Alumno;
+import modelos.AlumnoValidaciones;
 import modelos.Conexion;
+import modelos.ModfAlumnoValidaciones;
 import modelos.Personal;
 import modelos.PersonalValidaciones;
 import org.springframework.dao.DataAccessException;
@@ -24,12 +26,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("modificarAlumno.htm")
 public class AdminModificarAlumnoController {
       
-      //PersonalValidaciones personalValidaciones;
+    ModfAlumnoValidaciones modfAlumnoValidaciones;
     private JdbcTemplate jdbcTemplate;
 
     public AdminModificarAlumnoController() {
 
-      //this.personalValidaciones = new PersonalValidaciones();
+     this.modfAlumnoValidaciones = new ModfAlumnoValidaciones();
         Conexion con = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(con.conexion());
 
@@ -60,7 +62,7 @@ public class AdminModificarAlumnoController {
             SessionStatus status,
             HttpServletRequest request
     ) {
-        //this.personalValidaciones.validate(u, result);
+       this.modfAlumnoValidaciones.validate(u, result);
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
             String idAlumno=request.getParameter("idAlumno");  
@@ -68,7 +70,7 @@ public class AdminModificarAlumnoController {
             mav.setViewName("Admin/alumno/modificarAlumno");
             mav.addObject("alumno", new Alumno(idAlumno, datos.getNombre(), datos.getApellido(), datos.getDni(), datos.getSexo(),datos.getFecNacimiento(), datos.getEstado(), datos.getPadre_idPadre1(), datos.getNivel_idNivel()));
             return mav;
-        } else {
+        } else {      
            String idAlumno=request.getParameter("idAlumno"); 
             this.jdbcTemplate.update(
                     "update alumno "

@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body {
-  font-family: 'Lato';
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h1,
@@ -9,7 +10,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: 'Montserrat';
+  font-family: 'Ubuntu', sans-serif;
 }
 
 hr.star-light,
@@ -323,7 +324,7 @@ form .row:first-child .floating-label-form-group {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #2C3E50;
+
   color: #fff;
 }
 
@@ -344,7 +345,7 @@ a:focus, a:hover, a:active {
 }
 
 .bg-primary {
-  background-color: #18BC9C !important;
+  background-image: url(https://oneclassblog.com/wp-content/uploads/2017/12/636018178719298745-528481120_tumblr_n2ppvtiBIL1r46cs4o1_1280.jpg);
 }
 
 .bg-secondary {

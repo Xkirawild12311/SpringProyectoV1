@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean:beans 
+    xmlns:bean="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns="http://www.springframework.org/schema/security" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+    http://www.springframework.org/schema/security 
+    http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+  
+<http auto-config="true" use-expressions="true">                                            
+        <intercept-url pattern="/dashboardAdmin.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/adminDocente.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/año1.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/matricula1.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/adminAlumno.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/añadirAlumno.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/modificarAlumno.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/adminAuxiliar.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/añadirAuxiliar.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/modificarAuxiliar.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/adminCurso.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/añadirCurso.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/modificarCurso.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/añadirDocente.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/modificarDocente.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/adminPadre.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/adminPadreGral.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/añadirPadre.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/detallePadre.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/modificarPadre.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/modificarMatricula.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/asignarCursoDocente.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/detalleDocente.htm" access="hasAnyRole('Administrador')"/>   
+     
+              
+        <form-login login-page="/loginAdmin.htm" default-target-url="/dashboardAdmin.htm"  
+                    login-processing-url="/j_spring_security_check" authentication-failure-url="/loginAdmin.htm?error" 
+                    username-parameter="username"
+                    password-parameter="password" />  
+         <logout logout-success-url="/loginAdmin.htm" logout-url="/salir" />  
+
+         <!-- enable csrf protection       
+            <form-login login-page="/login"  default-target-url="/index" authentication-failure-url="/login?error" 
+                        username-parameter="usuario" password-parameter="lacontra" />
+            <logout logout-success-url="/login?logout"/>
+            <csrf/>
+            
+            
+        -->   
+    </http>
+    
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider>
+            <password-encoder hash="bcrypt" />
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query="select correo,password,enabled from personal where correo=?"
+                               authorities-by-username-query="select us.correo as correo, ur.nombre as rol from personal as us, rol as ur, rol_personal as rp where us.idPersonal=rp.id_personal and rp.id_rol=ur.id and us.correo=?" 
+            />
+        </authentication-provider>
+    </authentication-manager>
+    
+            
+</bean:beans>

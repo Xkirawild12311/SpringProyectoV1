@@ -3,8 +3,10 @@ package controller.adminAlumno;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import modelos.Alumno;
 import modelos.Conexion;
 import modelos.Matricula;
+import modelos.Padre;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -68,11 +70,13 @@ public class AdminMatricularAlumnoController {
         String idp=dato1+dato3;
         System.out.println("vvhvhvhvvhvhvh"+dato1);
         System.out.println("vvhvhvhvvhvhvh"+dato2);
+        System.out.println("vvhvhvhvvhvhvh"+dato3);
+        System.out.println("zzzzz"+u.getAlumno_idAlumno().substring(1,6));
         this.jdbcTemplate.update(
-        "insert into matricula (idMatricula,fecMatricula,Padre_idPadre ,alumno_idAlumno, nivel_idNivel) values (?,?,?,?,?)",
-         idp, u.getFecMatricula(),u.getPadre_idPadre(), u.getAlumno_idAlumno(), u.getNivel_idNivel());
-          System.out.println("vvhvhvhvvhvhvh"+dato1);
-          System.out.println("vvhvhvhvvhvhvh"+dato1);                  
+          "insert into matricula (idMatricula, fecMatricula, Padre_idPadre,alumno_idAlumno,nivel_idNivel) values (?,?,?,?,?)",
+           idp, u.getFecMatricula(), u.getPadre_idPadre(), u.getAlumno_idAlumno().substring(1,6), u.getNivel_idNivel());
+         
+          System.out.println("OOAAaA"+u.getAlumno_idAlumno().substring(1,5));                  
         return new ModelAndView("redirect:/adminAlumno.htm");
         
         }  

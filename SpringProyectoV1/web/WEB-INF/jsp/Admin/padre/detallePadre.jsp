@@ -7,19 +7,19 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="wrapper">
             <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Andes</h3>
+             <div class="sidebar-header">
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
+                  <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
                 <li class="active">
                        <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
@@ -29,9 +29,7 @@
                     <li>
                         <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
                             <ul class="collapse list-unstyled" id="paginaPadre">
-                            <li>
-                                <a href="adminPadreGral.htm">Inicio</a>
-                            </li>
+                          
                             <li>
                                 <a href="adminPadre.htm?">Padres</a>
                             </li>                          
@@ -55,17 +53,38 @@
                             <li>
                                 <a href="<c:url value="/adminAlumno.htm" />">Ver Alumnos</a>
                             </li>
+                            
+                             <li>
+                                <a href="asignarCursoDocente.htm">Asignar Curso a Docentes</a>
+                            </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Cursos</a>
+                
+                     <li>
+                        <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
                               
                 </ul>
             </nav>
+                    
+               <div class="content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-left"></i>
+                            <span>Ocultar</span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a>Usario: ${pageContext.request.userPrincipal.name}</a>
+                                </li>                               
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
               <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                  <br>
                 <h2 align="center">Lista de Hijos Asignados al Padre</h2>
@@ -100,6 +119,7 @@
                     </tbody>
                 </table> 
             </div>  
+                                 </div>
         </div>
          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->

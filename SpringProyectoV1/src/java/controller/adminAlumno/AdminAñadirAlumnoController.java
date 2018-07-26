@@ -3,6 +3,7 @@ package controller.adminAlumno;
 
 import java.util.List;
 import modelos.Alumno;
+import modelos.AlumnoValidaciones;
 import modelos.Conexion;
 import modelos.Padre;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,11 +20,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("añadirAlumno.htm")
 public class AdminAñadirAlumnoController {
     
-     //ArticuloValidaciones articuloValidaciones;
+     AlumnoValidaciones alumnoValidaciones;
     private JdbcTemplate jdbcTemplate;
 
     public AdminAñadirAlumnoController() {
-        //this.articuloValidaciones=new ArticuloValidaciones();
+        this.alumnoValidaciones=new AlumnoValidaciones();
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
@@ -51,7 +52,7 @@ public class AdminAñadirAlumnoController {
                 SessionStatus status
         )
     {
-         //this.articuloValidaciones.validate(u, result);
+         this.alumnoValidaciones.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav=new ModelAndView();
@@ -72,7 +73,7 @@ public class AdminAñadirAlumnoController {
         this.jdbcTemplate.update(  
                 
         "insert into alumno (idAlumno, nombre, apellido, dni, sexo, fecNacimiento, estado, Padre_idPadre1, nivel_idNivel) values (?,?,?,?,?,?,?,?,?)",
-         idp, u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getFecNacimiento(), u.getEstado(), u.getPadre_idPadre1(),u.getNivel_idNivel());
+          idp, u.getNombre(), u.getApellido(), u.getDni(), u.getSexo(), u.getFecNacimiento(), u.getEstado(), u.getPadre_idPadre1(),u.getNivel_idNivel());
           System.out.println("vvhvhvhvvhvhvh"+dato1);
           System.out.println("vvhvhvhvvhvhvh"+dato1);                  
         return new ModelAndView("redirect:/adminAlumno.htm");

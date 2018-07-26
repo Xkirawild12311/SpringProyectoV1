@@ -1,12 +1,13 @@
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Slab', serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -26,7 +27,7 @@ a:focus {
     background: #fff;
     border: none;
     border-radius: 0;
-    margin-bottom: 40px;
+    
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -67,12 +68,12 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
+    padding: 10px;
     background: #0b613a;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #47748b;
 }
 

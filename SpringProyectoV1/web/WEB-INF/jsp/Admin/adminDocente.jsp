@@ -8,7 +8,7 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+       <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
@@ -16,12 +16,12 @@
         <div class="wrapper">
             <!-- Sidebar -->
             <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Andes</h3>
+               <div class="sidebar-header">
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
-
+                
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
+                    <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
@@ -54,21 +54,25 @@
                             <li>
                                 <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                             <li>
+                                <a href="asignarCursoDocente.htm">Asignar Curso a Docentes</a>
+                            </li>
                            
                         </ul>
                     </li>
-                    <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Cursos</a>
+                
+                     <li>
+                        <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
                           
                 </ul>
             </nav>
             
-            <div id="content">
+       
+           
                 
+                <div class="container">
+                         
                                      <!--CONTENIDO del Navbar-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
@@ -77,17 +81,23 @@
                             <i class="fas fa-align-left"></i>
                             <span>Ocultar</span>
                         </button>
+                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a>Usario: ${pageContext.request.userPrincipal.name}</a>
+                                </li>                               
+                            </ul>
+                        </div>
                                         
                     </div>
-                </nav>
-                
-                <div class="container"> <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
+                </nav><!--CONTENIDO DE LA PAGINA PRINCIPAL-->
                     <br>
                 <h2 align="center">Lista de todos nuestros Docentes</h2>
-                <br>
+                <br>                
           
-                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>                
-                <table class="table table-dark">
+                <a href="añadirDocente.htm" class="btn btn-success">Añadir</a>      
+                <div class="table-responsive">
+                        <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -130,12 +140,14 @@
                         </c:forEach>
                     </tbody>
                 </table> 
+                </div>
+            
             </div>     
                 
             </div> 
             
            
-        </div>
+   
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>   

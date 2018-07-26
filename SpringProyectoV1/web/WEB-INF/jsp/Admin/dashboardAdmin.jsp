@@ -7,23 +7,23 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
     </head>
-    <body>
-
+    <body>        
         <div class="wrapper">
             <!-- Sidebar -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Andes</h3>
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
-                <li class="active">
+                    <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
+                    
+                    <li class="active">
                         <a href="#">Inicio</a>
                     </li>
                     <li>                        
@@ -31,8 +31,8 @@
                     </li>
                     <li>
                         <a href="#paginaPadre" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Padres</a>  
-                            <ul class="collapse list-unstyled" id="paginaPadre">
-                                                     <li>
+                        <ul class="collapse list-unstyled" id="paginaPadre">
+                            <li>
                                 <a href="adminPadre.htm?">Padres</a>
                             </li>                          
                         </ul>
@@ -43,9 +43,9 @@
                     <li>
                         <a href="<c:url value="/adminAlumno.htm" />">Alumnos</a>
                     </li>
-                     <li>
+                    <li>
                         <a href="#paginaAlumno" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Matricula</a>  
-                            <ul class="collapse list-unstyled" id="paginaAlumno">
+                        <ul class="collapse list-unstyled" id="paginaAlumno">
                             <li>
                                 <a href="añadirPadre.htm">Matricular Padres</a>
                             </li>
@@ -55,89 +55,42 @@
                             <li>
                                 <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
-                           
+                            <li>
+                                <a href="asignarCursoDocente.htm">Asignar Curso a Docentes</a>
+                            </li>
+
                         </ul>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
+                    </li>                 
                     <li>
                         <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
-                               
+
                 </ul>
             </nav>
-           
+
             <div id="content">
-                                 <!--CONTENIDO del Navbar-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
 
                         <button type="button" id="sidebarCollapse" class="btn btn-info">
                             <i class="fas fa-align-left"></i>
                             <span>Ocultar</span>
                         </button>
-                     
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                             
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
+                                    <a>Usario: ${pageContext.request.userPrincipal.name}</a>
+                                </li>                               
                             </ul>
                         </div>
                     </div>
                 </nav>
+
                 <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
-                <div class="container">
-
-                    <h2>listado de Todo el Personal Administrativo</h2>
-                    <p>The .table-dark class adds a black background to the table:</p>  
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Cargo</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Dni</th>
-                                <th>Sexo</th>
-                                <th>Correo</th>
-                                <th>Contraseña</th>
-                                <th>Fec Nacimiento</th>
-                                <th>Comentarios</th>                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${datos}" var="dato">
-                                <tr>
-                                    <td><c:out value="${dato.idPersonal}" /></td>
-                                    <td><c:out value="${dato.cargoId}" /></td>
-                                    <td><c:out value="${dato.nombre}" /></td>
-                                    <td><c:out value="${dato.apellido}" /></td>  
-                                    <td><c:out value="${dato.dni}" /></td>
-                                    <td><c:out value="${dato.sexo}" /></td>
-                                    <td><c:out value="${dato.correo}" /></td>
-                                    <td><c:out value="${dato.password}" /></td>
-                                    <td><c:out value="${dato.fecNacimiento}" /></td>
-                                    <td><c:out value="${dato.comentarios}" /></td>
-                                    
-                                                          
-
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table> 
-                </div>
+                <h1>Bienvenido: ${pageContext.request.userPrincipal.name}</h1>
 
 
 

@@ -24,8 +24,11 @@ public class AdminMatricula1Controller {
     public ModelAndView home(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();        
         String alumno_idAlumno = request.getParameter("alumno_idAlumno");
+        
         String sql = "SELECT * FROM matricula WHERE alumno_idAlumno='" +alumno_idAlumno+"'";      
         List alumnoId=this.jdbcTemplate.queryForList(sql);
+        String s=alumnoId.toString();
+        System.out.println(s);
         mav.addObject("alumnoId", alumnoId);        
         mav.setViewName("Admin/alumno/año1/matricula1");
         System.out.println("Revisar: "+mav.toString());

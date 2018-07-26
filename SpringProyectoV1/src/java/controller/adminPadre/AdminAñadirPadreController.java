@@ -5,6 +5,7 @@ import java.util.List;
 import modelos.ArticuloValidaciones;
 import modelos.Conexion;
 import modelos.Padre;
+import modelos.PadreValidaciones;
 import modelos.Personal;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("añadirPadre.htm")
 public class AdminAñadirPadreController {
     
-    //ArticuloValidaciones articuloValidaciones;
+   PadreValidaciones padreValidaciones;
     private JdbcTemplate jdbcTemplate;
 
     public AdminAñadirPadreController() {
-        //this.articuloValidaciones=new ArticuloValidaciones();
+        this.padreValidaciones=new PadreValidaciones();
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
@@ -45,7 +46,7 @@ public class AdminAñadirPadreController {
                 SessionStatus status
         )
     {
-         //this.articuloValidaciones.validate(u, result);
+        this.padreValidaciones.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav=new ModelAndView();

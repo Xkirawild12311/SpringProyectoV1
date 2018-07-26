@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import modelos.Conexion;
 import modelos.Padre;
+import modelos.PadreValidaciones;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -22,12 +23,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("modificarPadre.htm")
 public class AdminModificarPadreController {
     
-   //PersonalValidaciones personalValidaciones;
+   PadreValidaciones padreValidaciones;
     private JdbcTemplate jdbcTemplate;
 
     public AdminModificarPadreController() {
 
-       // this.personalValidaciones = new PersonalValidaciones();
+       this.padreValidaciones = new PadreValidaciones();
         Conexion con = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(con.conexion());
 
@@ -51,7 +52,7 @@ public class AdminModificarPadreController {
             SessionStatus status,
             HttpServletRequest request
     ) {
-        //this.personalValidaciones.validate(u, result);
+        this.padreValidaciones.validate(u, result);
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
             String idPadre=request.getParameter("idPadre");  

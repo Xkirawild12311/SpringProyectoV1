@@ -4,6 +4,8 @@ import java.util.List;
 import modelos.ArticuloValidaciones;
 import modelos.Conexion;
 import modelos.Curso;
+import modelos.Curso2Validaciones;
+import modelos.CursoValidaciones;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -18,11 +20,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("añadirCurso.htm")
 public class AñadirCursoController {
       
-    //ArticuloValidaciones articuloValidaciones;
+    Curso2Validaciones curso2Validaciones;
     private JdbcTemplate jdbcTemplate;
 
     public AñadirCursoController() {
-        //this.articuloValidaciones=new ArticuloValidaciones();
+        this.curso2Validaciones=new Curso2Validaciones();
         Conexion conexion = new Conexion();
         this.jdbcTemplate = new JdbcTemplate(conexion.conexion());
     }
@@ -44,7 +46,7 @@ public class AñadirCursoController {
                 SessionStatus status
         )
     {
-         //this.articuloValidaciones.validate(u, result);
+         this.curso2Validaciones.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav=new ModelAndView();

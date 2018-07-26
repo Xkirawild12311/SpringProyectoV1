@@ -7,19 +7,19 @@
         <title>ANDINO</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/prueba.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/profesor.css"/>">
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="wrapper">
              <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Andes</h3>
+               <div class="sidebar-header">
+                    <img  src="<c:url value="/resources/images/logo2.png"/>">
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
+                   <a href="<c:url value="/salir"/>"><p>Desloguearte</p></a>
                     <li>
                         <a href="dashboardAdmin.htm">Inicio</a>
                     </li>
@@ -52,14 +52,15 @@
                             <li>
                                 <a href="añadirDocente.htm">Matricular Docentes</a>
                             </li>
+                             <li>
+                                <a href="asignarCursoDocente.htm">Asignar Curso a Docentes</a>
+                            </li>
                            
                         </ul>
                     </li>
+                   
                     <li>
-                        <a href="<c:url value="#" />">Agregar Nivel</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="#" />">Cursos</a>
+                        <a href="<c:url value="adminCurso.htm" />">Cursos</a>
                     </li>
                               
                 </ul>
@@ -89,7 +90,7 @@
                                 <td><c:out value="${dato.alumno_idAlumno}" /></td>  
                                 <td><c:out value="${dato.nivel_idNivel}" /></td>                      
                                 <td>
-                                    <a href="<c:url value="modificarDocente.htm?idPersonal=${dato.idAlumno}"/>" class="btn btn-primary">Modificar</a>
+                                    <a href="<c:url value="modificarMatricula.htm?idMatricula=${dato.idMatricula}"/>" class="btn btn-primary">Modificar</a>
                                 </td>                             
                             </tr>
                         </c:forEach>
