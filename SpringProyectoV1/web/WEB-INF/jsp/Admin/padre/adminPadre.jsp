@@ -99,8 +99,7 @@
                                 <th>Apellido</th>
                                 <th>Dni</th>
                                 <th>Sexo</th>
-                                <th>Correo</th>
-                                <th>Contraseña</th>
+                                <th>Correo</th>                               
                                 <th>Fecha de Nacimiento</th>                         
                                 <th align="center" colspan="3" >Accion</th>
                             </tr>
@@ -113,8 +112,7 @@
                                     <td><c:out value="${dato.apellido}" /></td>  
                                     <td><c:out value="${dato.dni}" /></td>
                                     <td><c:out value="${dato.sexo}" /></td>
-                                    <td><c:out value="${dato.correo}" /></td>
-                                    <td><c:out value="${dato.password}" /></td>
+                                    <td><c:out value="${dato.correo}" /></td>                                    
                                     <td><c:out value="${dato.fecNacimiento}" /></td>                                                                                        
                                     <td>
                                         <a href="<c:url value="modificarPadre.htm?idPadre=${dato.idPadre}"/>" class="btn btn-primary">Modificar</a>
